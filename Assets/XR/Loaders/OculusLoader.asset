@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1488926636, guid: ebae63e7edba59945a994528ada1f7a2, type: 3}
-  m_Name: NormcoreAppSettings
+  m_Script: {fileID: 11500000, guid: 03bc68f14d65e7747a59d5ff74bd199b, type: 3}
+  m_Name: OculusLoader
   m_EditorClassIdentifier: 
-  _normcoreAppKey: 02f44bc6-d705-41a8-985e-8039c7d63b42
-  _matcherURL: wss://normcore-matcher.normcore.io:3000
