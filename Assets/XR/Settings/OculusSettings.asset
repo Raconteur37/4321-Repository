@@ -17,7 +17,7 @@ MonoBehaviour:
   SharedDepthBuffer: 1
   DepthSubmission: 0
   DashSupport: 1
-  LowOverheadMode: 0
+  LowOverheadMode: 1
   OptimizeBufferDiscards: 1
   PhaseSync: 0
   SymmetricProjection: 1
@@ -29,5 +29,5 @@ MonoBehaviour:
   SpaceWarp: 0
   TargetQuest2: 1
   TargetQuestPro: 0
-  TargetQuest3: 0
+  TargetQuest3: 1
   SystemSplashScreen: {fileID: 0}
