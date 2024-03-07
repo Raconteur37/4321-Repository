@@ -10,6 +10,7 @@ The University of Houston COSC4321 Group Repo
 - Austin Slade Bernal (Github:asbernal)
 - Kurmanbek Bazarov (Github:kurmanbekbazarov)
 - Osaid Mohammad (Github:OsaCode468)
+- 
 **Project Description**:
 Provide a fun and relaxing environment to enable learning of different vegetational life
 Give an opportunity to care for and grow a variety of plants under weather conditions
