@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &328336168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6199402809415348836, guid: fbb845a2d049c5a47af2720e59791867,
+    type: 3}
+  m_PrefabInstance: {fileID: 8147906710118536439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &328336173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328336168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3c347605a3d7544bdc87d1ed5c9b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
 --- !u!1 &753523404
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +155,7 @@ GameObject:
   - component: {fileID: 753523406}
   - component: {fileID: 753523405}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Baseplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +502,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1001 &2119536899
+--- !u!1001 &8147906710118536439
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -491,66 +510,80 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.88
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 2.23
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9
+      value: 2.48
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99934393
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03325942
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0019692292
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.014201524
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 780872276193418803, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 39dd0867e02a6b0428397feae21cedda,
+    - target: {fileID: 6199402809415348836, guid: fbb845a2d049c5a47af2720e59791867,
         type: 3}
       propertyPath: m_Name
-      value: aloe-plant
+      value: TestPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 6199402809415348836, guid: fbb845a2d049c5a47af2720e59791867,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267626763991457502, guid: fbb845a2d049c5a47af2720e59791867,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a0a60e78fafa0f42a891ee6db2af0d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 39dd0867e02a6b0428397feae21cedda, type: 3}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6199402809415348836, guid: fbb845a2d049c5a47af2720e59791867,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 328336173}
+  m_SourcePrefab: {fileID: 100100000, guid: fbb845a2d049c5a47af2720e59791867, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -558,4 +591,4 @@ SceneRoots:
   - {fileID: 1627861279}
   - {fileID: 802718268}
   - {fileID: 753523408}
-  - {fileID: 2119536899}
+  - {fileID: 8147906710118536439}
