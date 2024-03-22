@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/MRMUSK/0.0.7/Starter Samples/Scenes/MRMUSK MR Test.unity
     guid: b138359d4578d354ca821bdb6f3112b0
+  - enabled: 0
+    path: Assets/Scenes/TwoPlayerTestingSceneBuildingBlock.unity
+    guid: 357b15ea54500422c9ad03456fae982f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ae13653649f3e8b4084c97d089f2a8c7,
       type: 2}
