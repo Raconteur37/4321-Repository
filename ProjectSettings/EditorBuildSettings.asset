@@ -5,7 +5,26 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Greenhouse_Day.unity
+    guid: 5581b50e71eb9e546bb959445993d202
+  - enabled: 0
+    path: Assets/Scenes/TwoPlayerTestingScene.unity
+    guid: 108d78a1c071e3445ab67a4da270a4d0
+  - enabled: 0
+    path: Assets/Samples/MRMUSK/0.0.7/Starter Samples/Scenes/MRMUSK VR Test.unity
+    guid: b0c40ca809cba4e5ea497b42c8653cde
+  - enabled: 0
+    path: Assets/Samples/MRMUSK/0.0.7/Starter Samples/Scenes/MRMUSK MR Test.unity
+    guid: b138359d4578d354ca821bdb6f3112b0
+  - enabled: 0
+    path: Assets/Scenes/TwoPlayerTestingSceneBuildingBlock.unity
+    guid: 357b15ea54500422c9ad03456fae982f
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ae13653649f3e8b4084c97d089f2a8c7,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3f06aa39740d7814b99e4a28d3b7e1e3,
+      type: 2}
