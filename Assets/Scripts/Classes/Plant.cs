@@ -27,7 +27,11 @@ public class Plant : MonoBehaviour
     {
         
     }
-
+    public void Update()
+    {
+        double waterLoss = waterDrainMultiplier * Time.deltaTime;
+        SubtractWater(waterLoss);
+    }
     public double getWaterRangePercent()
     {
         return 0.0;
@@ -37,7 +41,19 @@ public class Plant : MonoBehaviour
     {
         return 0.0;
     }
-    
+
+    public void SubtractWater(double amount)
+    {
+        waterAmount -= amount;
+        // The method that detracts water based on the tick rate
+    }
+
+    public bool getWaterIsInRange()
+    {
+        // This method will compare the water range percentage with the min and max range, and will return a boolean variable indicating as to whether it should be wilting or not.
+        return waterIsInRange;
+    }
+
     
     
     
