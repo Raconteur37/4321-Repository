@@ -844,8 +844,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Virtual Garden
-  metroPackageVersion: 
+  metroPackageName: VirtualGarden
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -853,7 +853,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Virtual Garden
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Virtual Garden
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
