@@ -1,0 +1,11 @@
+Model Information:
+* title:	Potato Plants Collection
+* source:	https://sketchfab.com/3d-models/potato-plants-collection-1ac0d5f9ce884acfabea3f146af670d0
+* author:	charles.cla (https://sketchfab.com/charles.cla)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Potato Plants Collection" (https://sketchfab.com/3d-models/potato-plants-collection-1ac0d5f9ce884acfabea3f146af670d0) by charles.cla (https://sketchfab.com/charles.cla) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
