@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 790
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -645,9 +645,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.077427864, y: 7.371292, z: -0.30755758}
+    m_Target: {x: -167.07568, y: -9.694237, z: -21.818565}
     speed: 2
-    m_Value: {x: -0.4270141, y: 11.184414, z: -15.247226}
+    m_Value: {x: -167.07568, y: -9.694237, z: -21.818565}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -693,20 +693,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.04638002, y: 0.9441976, z: -0.15170546, w: -0.28866327}
+    m_Target: {x: -0.090879366, y: 0.5714415, z: -0.06387463, w: -0.81310624}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: -0.09087819, y: 0.571434, z: -0.063873805, w: -0.8130957}
   m_Size:
-    m_Target: 93.946846
+    m_Target: 173.32343
     speed: 2
-    m_Value: 95.668884
+    m_Value: 173.32343
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.0014995
+    m_SpeedNormalized: 0.5005
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -717,7 +717,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.04638002, y: 0.9441976, z: -0.15170546, w: -0.28866327}
+  m_LastSceneViewRotation: {x: 0.023287022, y: 0.9766558, z: -0.14491983, w: 0.15691182}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -763,7 +763,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 40fbffff
+      m_ExpandedIDs: f8f9ffff40fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -938,15 +938,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/khalilscomputer/Desktop/4321-Repository
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 10430000
-    m_LastClickedID: 17168
+    m_SelectedIDs: 14430000
+    m_LastClickedID: 17172
     m_ExpandedIDs: 00000000b842000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000966d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
