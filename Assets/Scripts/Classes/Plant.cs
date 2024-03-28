@@ -24,11 +24,6 @@ public class Plant : ScriptableObject
     {
         
     }
-    public void Update()
-    {
-        double waterLoss = waterDrainMultiplier * Time.deltaTime;
-        SubtractWater(waterLoss);
-    }
     public double getWaterRangePercent()
     {
         return 0.0;
@@ -39,10 +34,14 @@ public class Plant : ScriptableObject
         return 0.0;
     }
 
-    public void SubtractWater(double amount)
+    public double getWaterAmount()
     {
-        waterAmount -= amount;
-        // The method that detracts water based on the tick rate
+        return waterAmount;
+    }
+
+    public void setWaterAmount(double amount)
+    {
+        this.waterAmount = amount;
     }
 
     public bool getWaterIsInRange()
@@ -51,7 +50,10 @@ public class Plant : ScriptableObject
         return waterIsInRange;
     }
 
-    
+    public double getWaterDrainMultiplier()
+    {
+        return waterDrainMultiplier;
+    }
     
     
 
