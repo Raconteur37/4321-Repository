@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GREENHOUSE-INOUT.unity
+- path: Assets/Scenes/GREENHOUSE.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
