@@ -7,7 +7,10 @@ public class PotManager : MonoBehaviour
 {
 
     [SerializeField] private Pot pot;
-    
+    [SerializeField] private bool hasSoil;
+
+
+
     private void Start()
     {
         

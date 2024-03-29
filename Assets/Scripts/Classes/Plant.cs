@@ -14,7 +14,7 @@ public class Plant : ScriptableObject
     [SerializeField] private double waterAmount, sunlightAmount; // These are int amount of water and sun you can give to a plant
     [SerializeField] private int waterMinRange, sunlightMinRange = 0; // These are the ranges of the sunlight and the water needed to maintain the plant...
         // These will be initiated on a plant by plant basis depending on the type of plant you are trying to grow
-    [SerializeField] private int waterMaxRange = 1, sunlightMaxRange = 1;
+    [SerializeField] private int waterMaxRange = 100, sunlightMaxRange = 100;
     [SerializeField] private string plantName, ownerName, healthString, state, description; // Basic string values...state is the current state the plant is in 
     [SerializeField] private Sprite plantImage; // Sprite of the image of the plant pulled from web API
     [SerializeField] private Mesh mesh;
