@@ -21,6 +21,17 @@ public class PlantManager : MonoBehaviour
     {
         return soil;
     }
-    
-    
+
+    public void Update()
+    {
+        double waterLoss = plant.getWaterDrainMultiplier() * Time.deltaTime;
+        SubtractWater(waterLoss);
+    }
+    public void SubtractWater(double amount)
+    {
+
+        plant.setWaterAmount(plant.getWaterAmount() - amount);
+
+        // The method that detracts water based on the tick rate
+    }
 }
