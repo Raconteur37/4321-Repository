@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TwoPlayerTestingSceneBuildingBlock.unity
     guid: 357b15ea54500422c9ad03456fae982f
+  - enabled: 0
+    path: Assets/Scenes/Greenhouse_Day 1.unity
+    guid: 71593a66655ee58459d2976f49cda26f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ae13653649f3e8b4084c97d089f2a8c7,
       type: 2}
