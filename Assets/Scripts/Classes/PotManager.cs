@@ -7,7 +7,7 @@ public class PotManager : MonoBehaviour
 {
 
     [SerializeField] private Pot pot;
-    [SerializeField] private bool hasSoil;
+
 
 
 
@@ -21,6 +21,7 @@ public class PotManager : MonoBehaviour
     {
         return pot.getGameObject();
     }
-    
+
+
     
 }

@@ -19,6 +19,16 @@ public class Soil : ScriptableObject
     {
         return type;
     }
+
+    public void onTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pot"))
+        {
+            Pot pot = other.GetComponent<Pot>();
+            pot.setSoil(type);
+
+        }
+    }
     
     
 }

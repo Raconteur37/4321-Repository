@@ -9,7 +9,8 @@ public class Pot : ScriptableObject
 
     [SerializeField] private Plant plant;
     [SerializeField] private GameObject potObject;
-    
+    [SerializeField] private Soil soil;
+
     [SerializeField] private TextMeshProUGUI potName; // Hold the name for the plant text mesh pro....potName.text
 
     public GameObject getGameObject()
@@ -21,5 +22,8 @@ public class Pot : ScriptableObject
     {
         this.plant = plant;
     }
-
+    public void setSoil(string type)
+    {
+        this.soil = new Soil(type);
+    }
 }
