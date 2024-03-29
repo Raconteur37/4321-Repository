@@ -116,7 +116,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     class OpenWeatherResponse
     {
-        [JsonProperty("coord")] public OpenWeather_Coordinates Location { get; set; }
+        [JsonProperty("coord")] public GetCurrentWeatherInfo.OpenWeather_Coordinates Location { get; set; }
         [JsonProperty("weather")] public List<OpenWeather_Condition> WeatherConditions { get; set; }
         [JsonProperty("base")] public string Internal_Base { get; set; }
         [JsonProperty("main")] public OpenWeather_KeyInfo KeyInfo { get; set; }

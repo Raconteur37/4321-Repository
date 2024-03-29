@@ -10,6 +10,7 @@ public class Soil : ScriptableObject
 {
     [SerializeField] private string type, status; // The type of soil, Sandy, Loam, or Clay as well as the status of the soil, Dry or Moist.
     
+    
     public Soil(string type)
     {
         this.type = type;
