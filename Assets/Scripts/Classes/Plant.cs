@@ -39,6 +39,11 @@ public class Plant : ScriptableObject
         return waterAmount;
     }
 
+    public double getSunlightAmount()
+    {
+        return sunlightAmount;
+    }
+
     public void setWaterAmount(double amount)
     {
         this.waterAmount = amount;
