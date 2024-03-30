@@ -17,8 +17,8 @@ MonoBehaviour:
   status: 0
   waterDrainMultiplier: 0
   sunlightDrainMultiplier: 0
-  waterAmount: 0
-  sunlightAmount: 0
+  waterAmount: 0.3
+  sunlightAmount: 0.6
   waterMinRange: 0
   sunlightMinRange: 0
   waterMaxRange: 1

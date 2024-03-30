@@ -10,7 +10,7 @@ public class PlantManager : MonoBehaviour
     public Plant plant;
     public Soil soil;
 
-
+    
 
     public Plant getPlant()
     {
@@ -24,8 +24,7 @@ public class PlantManager : MonoBehaviour
 
     public void Update()
     {
-        double waterLoss = plant.getWaterDrainMultiplier() * Time.deltaTime;
-        SubtractWater(waterLoss);
+        
     }
     public void SubtractWater(double amount)
     {

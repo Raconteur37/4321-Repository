@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Pot", menuName = "Pot")]
 public class Pot : ScriptableObject
@@ -25,5 +26,9 @@ public class Pot : ScriptableObject
     public void setSoil(string type)
     {
         this.soil = new Soil(type);
+    }
+    public Plant getPlant()
+    {
+        return plant;
     }
 }
