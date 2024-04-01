@@ -9,14 +9,28 @@ public class PotManager : MonoBehaviour
 
     [SerializeField] private Pot pot;
     [SerializeField] private Canvas plantstatsUI;
-
-    private Plant plant;
-
-
-
-
+    [SerializeField] private Soil soil;
+    [SerializeField] private Plant plant;
+    
+    GameObject soilGO = GameObject.Find("Soil_Physical");
+    GameObject plantGO = GameObject.Find("Plant_Physical");
+    
     private void Start()
     {
+
+        
+
+        if (soilGO != null)
+        {
+            soilGO.SetActive(false);
+        }
+        
+        if (plantGO != null)
+        {
+            plantGO.SetActive(false);
+        }
+        
+        
         plant = pot.getPlant();
         if (plant != null)
         {
@@ -53,6 +67,10 @@ public class PotManager : MonoBehaviour
         return pot.getGameObject();
     }
 
+    public Soil getSoil()
+    {
+        return soil;
+    }
 
 
 
