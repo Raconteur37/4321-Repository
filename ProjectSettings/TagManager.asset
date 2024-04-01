@@ -7,6 +7,7 @@ TagManager:
   - Pot
   - WaterTarget
   - Selectable
+  - Cube
   layers:
   - Default
   - TransparentFX
