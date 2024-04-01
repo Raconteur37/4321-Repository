@@ -1,0 +1,11 @@
+Model Information:
+* title:	House Plants
+* source:	https://sketchfab.com/3d-models/house-plants-1347ac536bea469281cc07d68e076654
+* author:	Nicolai Kilstrup (https://sketchfab.com/nkilstrup)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "House Plants" (https://sketchfab.com/3d-models/house-plants-1347ac536bea469281cc07d68e076654) by Nicolai Kilstrup (https://sketchfab.com/nkilstrup) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

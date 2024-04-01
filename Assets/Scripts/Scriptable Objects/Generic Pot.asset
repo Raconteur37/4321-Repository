@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3bbe41a1e920049920e897c8b004d9, type: 3}
   m_Name: Generic Pot
   m_EditorClassIdentifier: 
+  plant: {fileID: 11400000, guid: 8210a9186dc6de249b1b0cf498654fc6, type: 2}
   potObject: {fileID: 0}
+  soil: {fileID: 11400000, guid: 6dd36619947671047884a869b1d7cb32, type: 2}
   potName: {fileID: 0}
