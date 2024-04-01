@@ -5,6 +5,8 @@ using UnityEngine;
 public class SeedPacketManager : MonoBehaviour
 {
     public SeedPacket seedPacket;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

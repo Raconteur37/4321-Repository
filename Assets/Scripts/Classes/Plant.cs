@@ -24,6 +24,8 @@ public class Plant : ScriptableObject
     {
         
     }
+    
+    
     public double getWaterRangePercent()
     {
         return 0.0;
