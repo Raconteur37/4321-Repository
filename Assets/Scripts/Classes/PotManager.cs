@@ -9,15 +9,28 @@ public class PotManager : MonoBehaviour
 
     [SerializeField] private Pot pot;
     [SerializeField] private Canvas plantstatsUI;
+    [SerializeField] private Soil soil;
+    [SerializeField] private Plant plant;
 
-    private Plant plant;
-
-
-
-
+    private GameObject soilGO = null;
+    private GameObject plantGO = null;
+    
     private void Start()
     {
-        plant = pot.getPlant();
+        
+        GameObject soilGO = GameObject.Find("Soil_Physical");
+        GameObject plantGO = GameObject.Find("Plant_Physical");
+        
+        if (soilGO != null)
+        {
+            soilGO.SetActive(false);
+        }
+        
+        if (plantGO != null)
+        {
+            plantGO.SetActive(false);
+        }
+        
         if (plant != null)
         {
             Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
@@ -48,12 +61,33 @@ public class PotManager : MonoBehaviour
 
     }
 
+    public void updateSoilGO()
+    {
+        if (soil != null) 
+        {
+            soilGO.SetActive(true); // Change based on the type of soil
+        } 
+    }
+
     public GameObject getPotObject()
     {
         return pot.getGameObject();
     }
 
+    public Soil getSoil()
+    {
+        return soil;
+    }
 
+    public void setSoil(Soil soil)
+    {
+        this.soil = soil;
+    }
+
+    public void setPlant(Plant plant)
+    {
+        this.plant = plant;
+    }
 
 
     

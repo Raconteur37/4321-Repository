@@ -18,15 +18,7 @@ public class Pot : ScriptableObject
     {
         return potObject;
     }
-
-    public void setPlant(Plant plant)
-    {
-        this.plant = plant;
-    }
-    public void setSoil(string type)
-    {
-        this.soil = new Soil(type);
-    }
+    
     public Plant getPlant()
     {
         return plant;
