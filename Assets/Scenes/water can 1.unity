@@ -144,17 +144,22 @@ PrefabInstance:
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
       propertyPath: stopAction
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
       propertyPath: TriggerModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
       propertyPath: CollisionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
@@ -170,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.m_Position.z
       value: 0.3523115
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
+      propertyPath: ColorBySpeedModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770670286796703236, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
@@ -493,6 +503,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173971563920015247, guid: 6ea15527181844a48b59ea794d9cf9f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1674161016394202053, guid: 6ea15527181844a48b59ea794d9cf9f4,
         type: 3}
       propertyPath: m_Name
