@@ -17,8 +17,8 @@ MonoBehaviour:
   status: 0
   waterDrainMultiplier: 0
   sunlightDrainMultiplier: 0
-  waterAmount: 20
-  sunlightAmount: 50
+  waterAmount: 0.2
+  sunlightAmount: 0.5
   waterMinRange: 0
   sunlightMinRange: 0
   waterMaxRange: 100
@@ -31,7 +31,7 @@ MonoBehaviour:
   plantImage: {fileID: 0}
   mesh: {fileID: 0}
   isGrowing: 0
-  hasSunlight: 0
+  hasSunlight: 1
   isFullyGrown: 0
   waterIsInRange: 0
   sunlightIsInRange: 0
