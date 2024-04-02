@@ -13,6 +13,7 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Plant plant;
     
     [SerializeField] float updateTime = 5f; //timeframe variable
+    [SerializeField] private Vector3 offset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
     private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
@@ -63,6 +64,36 @@ public class PotManager : MonoBehaviour
         }
 
     }
+    private void updatePlantStatsUI()
+    {
+        if (plant != null)
+        {
+            Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
+            foreach (Slider slider in sliders)
+            {
+                if (slider.name == "WaterSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double waterAmount = plant.getWaterAmount();
+                        float waterAmountFloat = (float)waterAmount;
+                        statsUI.SetProgress(waterAmountFloat);
+                    }
+                }
+                else if (slider.name == "SunlightSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double sunlightAmount = plant.getSunlightAmount();
+                        float sunlightAmountFloat = (float)sunlightAmount;
+                        statsUI.SetProgress(sunlightAmountFloat);
+                    }
+                }
+            }
+        }
+    }
 
     private void Update()
     {
@@ -77,6 +108,21 @@ public class PotManager : MonoBehaviour
             else {
                 tempUpdateCounter -= Time.deltaTime;  //take down time 
             }   
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == gameObject) 
+                {
+                    Vector3 uiPosition = transform.position + offset;
+                    plantstatsUI.transform.position = uiPosition;
+                    plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
+                }
+            }
         }
     }
 
