@@ -11,6 +11,9 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Canvas plantstatsUI;
     [SerializeField] private Soil soil;
     [SerializeField] private Plant plant;
+    
+    [SerializeField] float updateTime = 5f; //timeframe variable
+    private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
     private GameObject plantGO = null;
@@ -59,6 +62,22 @@ public class PotManager : MonoBehaviour
             }
         }
 
+    }
+
+    private void Update()
+    {
+
+        if (plant != null)  
+        {
+            if (tempUpdateCounter <= 0f) 
+            {
+                plant.updatePlant();
+                tempUpdateCounter = updateTime;  //reset the timer or cd
+            }
+            else {
+                tempUpdateCounter -= Time.deltaTime;  //take down time 
+            }   
+        }
     }
 
     public void updateSoilGO()
