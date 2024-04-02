@@ -12,14 +12,18 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Soil soil;
     [SerializeField] private Plant plant;
     
-    GameObject soilGO = GameObject.Find("Soil_Physical");
-    GameObject plantGO = GameObject.Find("Plant_Physical");
+    [SerializeField] float updateTime = 5f; //timeframe variable
+    private float tempUpdateCounter = 0f; //timeframe temp variable
+
+    private GameObject soilGO = null;
+    private GameObject plantGO = null;
     
     private void Start()
     {
-
         
-
+        GameObject soilGO = GameObject.Find("Soil_Physical");
+        GameObject plantGO = GameObject.Find("Plant_Physical");
+        
         if (soilGO != null)
         {
             soilGO.SetActive(false);
@@ -30,8 +34,6 @@ public class PotManager : MonoBehaviour
             plantGO.SetActive(false);
         }
         
-        
-        plant = pot.getPlant();
         if (plant != null)
         {
             Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
@@ -62,6 +64,30 @@ public class PotManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+
+        if (plant != null)  
+        {
+            if (tempUpdateCounter <= 0f) 
+            {
+                plant.updatePlant();
+                tempUpdateCounter = updateTime;  //reset the timer or cd
+            }
+            else {
+                tempUpdateCounter -= Time.deltaTime;  //take down time 
+            }   
+        }
+    }
+
+    public void updateSoilGO()
+    {
+        if (soil != null) 
+        {
+            soilGO.SetActive(true); // Change based on the type of soil
+        } 
+    }
+
     public GameObject getPotObject()
     {
         return pot.getGameObject();
@@ -72,7 +98,18 @@ public class PotManager : MonoBehaviour
         return soil;
     }
 
+    public void setSoil(Soil soil)
+    {
+        this.soil = soil;
+        Debug.Log("Soil has been set");
+    }
+
+    public void setPlant(Plant plant)
+    {
+        this.plant = plant;
+        Debug.Log("it's set");
+    }
 
 
-    
+
 }

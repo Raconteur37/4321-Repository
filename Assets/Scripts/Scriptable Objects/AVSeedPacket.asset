@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5b391a3c15d42e285260517b634330, type: 3}
   m_Name: AVSeedPacket
   m_EditorClassIdentifier: 
-  displayName: 
+  displayName: Aloe Vera
   plant: {fileID: 11400000, guid: 8210a9186dc6de249b1b0cf498654fc6, type: 2}

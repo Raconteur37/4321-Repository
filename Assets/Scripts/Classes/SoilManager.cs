@@ -6,14 +6,35 @@ public class SoilManager : MonoBehaviour
 {
     [SerializeField] private Soil soil;
     // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter(Collider other)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Triggered the event");
+
+        if (other.CompareTag("Pot"))
+        {
+            PotManager potManager = other.GetComponent<PotManager>();
+
+            switch (soil.getType())
+            {
+
+                case ("Sandy"):
+                    potManager.setSoil(new Soil("Sandy"));
+                    break;
+
+                case ("Loam"):
+                    potManager.setSoil(new Soil("Loam"));
+                    break;
+
+                case ("Clay"):
+                    potManager.setSoil(new Soil("Clay"));
+                    break;
+
+            }
+
+            potManager.updateSoilGO();
+
+
+        }
     }
 }
