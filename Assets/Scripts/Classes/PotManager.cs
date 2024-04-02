@@ -101,13 +101,15 @@ public class PotManager : MonoBehaviour
     public void setSoil(Soil soil)
     {
         this.soil = soil;
+        Debug.Log("Soil has been set");
     }
 
     public void setPlant(Plant plant)
     {
         this.plant = plant;
+        Debug.Log("it's set");
     }
 
 
-    
+
 }
