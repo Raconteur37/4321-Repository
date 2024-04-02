@@ -35,33 +35,7 @@ public class PotManager : MonoBehaviour
             plantGO.SetActive(false);
         }
         
-        if (plant != null)
-        {
-            Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
-            foreach (Slider slider in sliders)
-            {
-                if (slider.name == "WaterSlider")
-                {
-                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
-                    if (statsUI != null)
-                    {
-                        double waterAmount = plant.getWaterAmount();
-                        float waterAmountFloat = (float)waterAmount;
-                        statsUI.SetProgress(waterAmountFloat);
-                    }
-                }
-                else if (slider.name == "SunlightSlider")
-                {
-                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
-                    if (statsUI != null)
-                    {
-                        double sunlightAmount = plant.getSunlightAmount();
-                        float sunlightAmountFloat = (float)sunlightAmount;
-                        statsUI.SetProgress(sunlightAmountFloat);
-                    }
-                }
-            }
-        }
+
 
     }
     private void updatePlantStatsUI()
@@ -109,7 +83,7 @@ public class PotManager : MonoBehaviour
                 tempUpdateCounter -= Time.deltaTime;  //take down time 
             }   
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && plant != null)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -154,6 +128,50 @@ public class PotManager : MonoBehaviour
     {
         this.plant = plant;
         Debug.Log("it's set");
+        if (plant != null)
+        {
+            Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
+            foreach (Slider slider in sliders)
+            {
+                if (slider.name == "WaterSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        int waterMin = this.plant.getWaterMinRange();
+                        Debug.Log("WaterMin: " + waterMin);
+                        int waterMax = this.plant.getWaterMaxRange();
+                        Debug.Log("WaterMax: " + waterMax);
+                        double waterAmount = this.plant.getWaterAmount();
+                        float waterAmountFloat = (float)waterAmount;
+                        float waterMinFloat = (float)waterMin;
+                        float waterMaxFloat = (float)waterMax;
+                        statsUI.setMin(waterMinFloat);
+                        statsUI.setMax(waterMaxFloat);
+                        statsUI.SetProgress(waterAmountFloat);
+                        statsUI.AddRangeMarkers();
+                    }
+                }
+                else if (slider.name == "SunlightSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        int sunlightMin = plant.getSunMinRange();
+                        int sunlightMax = plant.getSunMaxRange();
+                        double sunlightAmount = plant.getSunlightAmount();
+                        float sunlightAmountFloat = (float)sunlightAmount;
+                        float sunlightMinFloat = (float)sunlightMin;
+                        float sunlightMaxFloat = (float)sunlightMax;
+                        statsUI.setMin(sunlightMinFloat);
+                        statsUI.setMax(sunlightMaxFloat);
+                        statsUI.SetProgress(sunlightAmountFloat);
+                        statsUI.AddRangeMarkers();
+
+                    }
+                }
+            }
+        }
     }
 
 

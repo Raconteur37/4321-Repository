@@ -17,12 +17,12 @@ MonoBehaviour:
   status: 0
   waterDrainMultiplier: 0
   sunlightDrainMultiplier: 0
-  waterAmount: 0.2
-  sunlightAmount: 0.5
-  waterMinRange: 0
-  sunlightMinRange: 0
-  waterMaxRange: 100
-  sunlightMaxRange: 100
+  waterAmount: 20
+  sunlightAmount: 50
+  waterMinRange: 20
+  sunlightMinRange: 30
+  waterMaxRange: 60
+  sunlightMaxRange: 70
   plantName: 
   ownerName: 
   healthString: 

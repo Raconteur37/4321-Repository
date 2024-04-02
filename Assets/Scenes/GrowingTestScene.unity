@@ -441,6 +441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandySoilbag
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba31ca76873cf0244ad73845d0098795,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -731,6 +736,74 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1278623990}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1325040859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6476229857162120817, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_Name
+      value: Aloe_Seedpacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.978
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542540391210700911, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0d75e7acfa25f642b10a3a8fd06084f, type: 3}
 --- !u!1001 &1569656450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,8 +828,7 @@ PrefabInstance:
         type: 3}
       propertyPath: plant
       value: 
-      objectReference: {fileID: 11400000, guid: 8210a9186dc6de249b1b0cf498654fc6,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1087436241383365074, guid: b982e4ef5db74554f8b880d7d6b2c644,
         type: 3}
       propertyPath: offset.x
@@ -1030,3 +1102,4 @@ SceneRoots:
   - {fileID: 1569656450}
   - {fileID: 2086210904}
   - {fileID: 621859391}
+  - {fileID: 1325040859}
