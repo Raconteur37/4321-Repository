@@ -118,6 +118,22 @@ public class Plant : ScriptableObject
         sunlightMaxRange = maxRange;
     }
 
+    public int getSunMinRange()
+    {
+        return sunlightMinRange;
+    }
+    public int getSunMaxRange()
+    {
+        return sunlightMaxRange;
+    }
+    public int getWaterMinRange()
+    {
+        return waterMinRange;
+    }
+    public int getWaterMaxRange()
+    {
+        return waterMaxRange;
+    }
     public void setSunlightAmount(int amount)
     {
         sunlightAmount = amount;
