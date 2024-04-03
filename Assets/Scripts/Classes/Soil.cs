@@ -20,38 +20,6 @@ public class Soil : ScriptableObject
     {
         return type;
     }
-
-    public void onTriggerEnter(Collider other)
-    {
-        
-        Debug.Log("Triggered the event");
-        
-        if (other.CompareTag("Pot"))
-        {
-            PotManager potManager = other.GetComponent<PotManager>();
-
-            switch(type)
-            {
-                
-                case("Sandy"):
-                    potManager.setSoil(new Soil("Sandy"));
-                    break;
-                
-                case("Loam"):
-                    potManager.setSoil(new Soil("Loam"));
-                    break;
-                
-                case("Clay"):
-                    potManager.setSoil(new Soil("Clay"));
-                    break;
-                
-            }
-            
-            potManager.updateSoilGO();
-            
-
-        }
-    }
     
     
 }

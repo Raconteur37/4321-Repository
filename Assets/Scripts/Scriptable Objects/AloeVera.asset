@@ -15,14 +15,14 @@ MonoBehaviour:
   waterRangePercent: 0
   sunlightPercentage: 0
   status: 0
-  waterDrainMultiplier: 0
-  sunlightDrainMultiplier: 0
-  waterAmount: 0.3
-  sunlightAmount: 0.6
-  waterMinRange: 0
-  sunlightMinRange: 0
-  waterMaxRange: 1
-  sunlightMaxRange: 1
+  waterDrainMultiplier: 0.3
+  sunlightDrainMultiplier: 0.5
+  waterAmount: 30
+  sunlightAmount: 50
+  waterMinRange: 20
+  sunlightMinRange: 30
+  waterMaxRange: 60
+  sunlightMaxRange: 70
   plantName: 
   ownerName: 
   healthString: 
@@ -31,8 +31,7 @@ MonoBehaviour:
   plantImage: {fileID: 0}
   mesh: {fileID: 0}
   isGrowing: 0
-  hasSunlight: 0
+  hasSunlight: 1
   isFullyGrown: 0
-  isSeedling: 0
   waterIsInRange: 0
   sunlightIsInRange: 0
