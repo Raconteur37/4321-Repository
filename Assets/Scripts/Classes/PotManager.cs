@@ -9,6 +9,9 @@ public class PotManager : MonoBehaviour
 
     [SerializeField] private Pot pot;
     [SerializeField] private Canvas plantstatsUI;
+
+    [SerializeField] private Canvas plantstatsUI1;
+    
     [SerializeField] private Soil soil;
     [SerializeField] private Plant plant;
     
@@ -95,6 +98,8 @@ public class PotManager : MonoBehaviour
                     Vector3 uiPosition = transform.position + offset;
                     plantstatsUI.transform.position = uiPosition;
                     plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
+                    plantstatsUI1.transform.position = uiPosition;
+                    plantstatsUI1.gameObject.SetActive(!plantstatsUI1.gameObject.activeSelf);
                 }
             }
         }
