@@ -170,6 +170,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             {
                 Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
                 FindObjectOfType<Rain>().rainStatus(conditions.Group);
+                FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
             }
         }
     }

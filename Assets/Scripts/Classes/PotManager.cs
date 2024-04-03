@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PotManager : MonoBehaviour
 {
-
+    
     [SerializeField] private Pot pot;
     [SerializeField] private Canvas plantstatsUI;
     [SerializeField] private Soil soil;
@@ -19,7 +19,17 @@ public class PotManager : MonoBehaviour
 
     private GameObject soilGO = null;
     private GameObject plantGO = null;
-    
+
+    bool isSunny;
+    public void getSunStatus(string status)
+    {
+        if (status == "Clear")
+        {
+            Debug.Log("Plant will grow faster while sun is out");
+            isSunny = true;
+        }
+    }
+
     private void Start()
     {
         
@@ -100,6 +110,10 @@ public class PotManager : MonoBehaviour
                     plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
                 }
             }
+        }
+        if (isSunny)
+        {
+            Debug.Log("It is sunny outside");
         }
     }
 
