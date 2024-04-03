@@ -26,8 +26,6 @@ namespace Classes.Plants
         public void updatePlant() {
         
         healthString = "";
-        
-        Debug.Log("Updated the plant");
 
         if (waterAmount >= waterMinRange)
         {
@@ -71,15 +69,17 @@ namespace Classes.Plants
             isGrowing = false;
         }
         
-        Debug.Log(healthString);
-        
         double sunAmountDrain = Math.Round(1.0 * sunlightDrainMultiplier,2);
         double waterAmountDrain = Math.Round(1.0 * waterDrainMultiplier, 2);
 
-        sunlightAmount -= sunAmountDrain;
-        waterAmount -= waterAmountDrain;
         
-        Debug.Log(waterAmount);
+        if (hasSunlight) {
+            sunlightAmount += sunAmountDrain;
+        } else {
+            sunlightAmount -= sunAmountDrain;
+        }
+        
+        waterAmount -= waterAmountDrain;
         
     }
 
@@ -194,8 +194,19 @@ namespace Classes.Plants
     {
         this.healthString = healthString;
     }
-    
-        
+
+    public void isPlantInSun(bool sun)
+    {
+        hasSunlight = sun;
+    }
+
+    public void toString()
+    {
+        string outString = "Health: " + healthString + "\n Sun Amount: " + sunlightAmount + "\n Water Amount: " +
+                           waterAmount + "\n Sun Range: " + sunlightMinRange + "-" + sunlightMaxRange +
+                           "\n Water Range: " + waterMinRange + "-" + waterMaxRange;
+        Debug.Log(outString);
+    }
         
     }
 }

@@ -19,14 +19,13 @@ public class PotManager : MonoBehaviour
 
     private GameObject soilGO = null;
     private GameObject plantGO = null;
-
-    bool isSunny;
+    
     public void getSunStatus(string status)
     {
         if (status == "Clear")
         {
             Debug.Log("Plant will grow faster while sun is out");
-            isSunny = true;
+            plant.isPlantInSun(true);
         }
     }
 
@@ -46,7 +45,7 @@ public class PotManager : MonoBehaviour
             plantGO.SetActive(false);
         }
 
-        // plant = new AloeVera(); // For now
+        plant = new AloeVera(); // For now
 
 
 
@@ -90,6 +89,7 @@ public class PotManager : MonoBehaviour
             if (tempUpdateCounter <= 0f) 
             {
                 plant.updatePlant();
+                plant.toString();
                 tempUpdateCounter = updateTime;  //reset the timer or cd
             }
             else {
@@ -110,10 +110,6 @@ public class PotManager : MonoBehaviour
                     plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
                 }
             }
-        }
-        if (isSunny)
-        {
-            Debug.Log("It is sunny outside");
         }
     }
 
