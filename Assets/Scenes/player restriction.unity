@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 629554173}
   - component: {fileID: 629554172}
   - component: {fileID: 629554177}
-  - component: {fileID: 629554180}
+  - component: {fileID: 629554178}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -159,12 +159,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.771583, y: 1, z: 0.9972038}
+  m_Center: {x: -0.00858742, y: 0, z: 0.0013980865}
 --- !u!23 &629554173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -244,28 +244,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 100
---- !u!195 &629554180
-NavMeshAgent:
+--- !u!114 &629554178
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629554171}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597db33723c384763b2aa64b6e7f3a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021347071
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,22 +380,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1761332691}
   m_PrefabAsset: {fileID: 0}
---- !u!208 &1185840317
-NavMeshObstacle:
+--- !u!65 &1185840319
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185840315}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 4.5, y: 2, z: 1}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -2, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_Size: {x: 6.49749, y: 0, z: 3.9912}
+  m_Center: {x: -2.3813658, y: -1.5734086, z: 2.1375892}
 --- !u!1 &1473346944
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,12 +655,12 @@ PrefabInstance:
     - target: {fileID: 5142960303148569766, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.49
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 5142960303148569766, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 5142960303148569766, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
@@ -715,17 +710,27 @@ PrefabInstance:
     - target: {fileID: 5482190854102404636, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       propertyPath: m_TagString
-      value: Greenhouse
+      value: GreenhouseBoundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931054664813128358, guid: 8b7cb10c08b1843adba9275de0794a67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 5931054664813128358, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.65
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5931054664813128358, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171726335467072594, guid: 8b7cb10c08b1843adba9275de0794a67,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -735,7 +740,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5482190854102404636, guid: 8b7cb10c08b1843adba9275de0794a67,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1185840317}
+      addedObject: {fileID: 1185840319}
   m_SourcePrefab: {fileID: 100100000, guid: 8b7cb10c08b1843adba9275de0794a67, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
