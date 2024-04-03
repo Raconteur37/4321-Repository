@@ -20,7 +20,7 @@ public class SeedPacketManager : MonoBehaviour
             {
 
                 case ("Aloe Vera"):
-                    potManager.setPlant(ScriptableObject.CreateInstance<AloeVera>());
+                    potManager.setPlant(new AloeVera());
                     Debug.Log("setting aloe");
                     break;
             }

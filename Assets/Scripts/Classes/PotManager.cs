@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes.Plants;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Pot pot;
     [SerializeField] private Canvas plantstatsUI;
     [SerializeField] private Soil soil;
-    [SerializeField] private Plant plant;
+    private PlantClass plant;
     
     [SerializeField] float updateTime = 5f; //timeframe variable
     [SerializeField] private Vector3 offset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
@@ -34,7 +35,9 @@ public class PotManager : MonoBehaviour
         {
             plantGO.SetActive(false);
         }
-        
+
+        // plant = new AloeVera(); // For now
+
 
 
     }
@@ -124,7 +127,7 @@ public class PotManager : MonoBehaviour
         Debug.Log("Soil has been set");
     }
 
-    public void setPlant(Plant plant)
+    public void setPlant(PlantClass plant)
     {
         this.plant = plant;
         Debug.Log("it's set");
