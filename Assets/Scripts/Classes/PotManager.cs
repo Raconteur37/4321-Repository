@@ -58,7 +58,7 @@ public class PotManager : MonoBehaviour
     {
         if (plant != null)
         {
-            Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
+            Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
                 if (slider.name == "WaterSlider")
@@ -150,7 +150,7 @@ public class PotManager : MonoBehaviour
         Debug.Log("it's set");
         if (plant != null)
         {
-            Slider[] sliders = plantstatsUI.GetComponentsInChildren<Slider>();
+            Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
                 if (slider.name == "WaterSlider")
