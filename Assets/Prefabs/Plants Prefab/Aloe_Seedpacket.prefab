@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7041345172106684065}
   - component: {fileID: 243012863432420293}
   - component: {fileID: 3910569303809584087}
-  - component: {fileID: 8569348229459402388}
   - component: {fileID: 7693898135263066699}
+  - component: {fileID: 8569348229459402388}
   m_Layer: 0
   m_Name: Aloe_Seedpacket
   m_TagString: Untagged
@@ -107,19 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8569348229459402388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6476229857162120817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69380f75ef7124a3b8ce1195aaaab9e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seedPacket: {fileID: 11400000, guid: f49ee7e8defdd4b56939a86fdb2f4611, type: 2}
 --- !u!54 &7693898135263066699
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8569348229459402388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476229857162120817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69380f75ef7124a3b8ce1195aaaab9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedPacket: {fileID: 11400000, guid: f49ee7e8defdd4b56939a86fdb2f4611, type: 2}
