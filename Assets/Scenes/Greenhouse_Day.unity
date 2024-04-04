@@ -1650,7 +1650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1277498966
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1765,6 +1765,7 @@ MonoBehaviour:
   oVRPassthroughLayer: {fileID: 1108847476}
   greenHouse: {fileID: 501910343}
   passThrough: {fileID: 2100386599}
+  cameraRig: {fileID: 1012657315272166779}
 --- !u!1 &1404009501
 GameObject:
   m_ObjectHideFlags: 0
