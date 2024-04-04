@@ -239,7 +239,6 @@ MonoBehaviour:
   plantstatsUI1: {fileID: 0}
   soil: {fileID: 0}
   updateTime: 5
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &8049987085908269710
 BoxCollider:
   m_ObjectHideFlags: 0
