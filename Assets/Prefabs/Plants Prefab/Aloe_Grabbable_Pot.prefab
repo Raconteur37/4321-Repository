@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pot: {fileID: 0}
   plantstatsUI: {fileID: 0}
+  plantstatsUI1: {fileID: 0}
   soil: {fileID: 0}
   updateTime: 5
   offset: {x: 0, y: 0, z: 0}
