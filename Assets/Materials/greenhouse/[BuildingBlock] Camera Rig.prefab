@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 2b895721-c212-4143-9805-57b8394a5df6
+  instanceId: e2ccfd03-de58-42c7-bc44-84e3be32c79f
   version: 1
 --- !u!114 &3792415765911449993
 MonoBehaviour:
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: cb61c7d4-597b-4b1f-b254-48492223388d
+  instanceId: 1b4a847d-f3d6-4aaa-ad01-73907af559a8
   version: 1
 --- !u!114 &3137603458050214340
 MonoBehaviour:
@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: fb4b8877-9df2-4504-925d-c851e6ced155
+  instanceId: 7ccb55eb-6aca-4da8-a3ae-bfc040abee99
   version: 1
 --- !u!114 &1193354336199903141
 MonoBehaviour:
@@ -5912,7 +5912,7 @@ Transform:
   m_GameObject: {fileID: 2564837853736087711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5933,7 +5933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: cb9bde6a-0786-4848-8f28-13014653de99
+  instanceId: 2ed75107-2b1a-4e5c-95d9-4cc790dd5e3f
   version: 1
 --- !u!114 &3222803443222223745
 MonoBehaviour:
@@ -7687,7 +7687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5d47ae98-1ed8-4753-ac7f-c41012479e3d
-  instanceId: baf11895-0d97-4559-b488-9cdf2cde26a5
+  instanceId: 5c3f289d-860f-4d05-b76c-b4d5e832455d
   version: 1
 --- !u!114 &4662058367120803422
 MonoBehaviour:
@@ -8908,7 +8908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: bb0f8103-9bfd-426d-8888-cd8c429d0bba
+  instanceId: 4ce275a9-5e5c-420b-8a4d-352c4a9ee047
   version: 1
 --- !u!114 &8020324939370023097
 MonoBehaviour:
@@ -11116,7 +11116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4187448e-9c2a-4021-ad92-fb65840f2721
-  instanceId: 51070e96-6c91-4924-85ba-5aeeb758dca2
+  instanceId: e2c15973-34e6-4eb7-8f4d-f37fa4683aec
   version: 1
 --- !u!114 &5518859026205313756
 MonoBehaviour:
@@ -13146,7 +13146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 51ddcbb3-5819-4248-8c44-262021e73968
+  instanceId: 5f2bfa00-2e20-42e5-894f-3266e416d939
   version: 1
 --- !u!114 &2024997382015019267
 MonoBehaviour:
@@ -13726,6 +13726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8226250155556906669}
   - component: {fileID: 1983763882683910190}
+  - component: {fileID: 1474664345209289535}
   m_Layer: 0
   m_Name: LeftEyeAnchor
   m_TagString: MainCamera
@@ -13799,6 +13800,50 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1474664345209289535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312900447629160364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &6343256902191575755
 GameObject:
   m_ObjectHideFlags: 0
@@ -14009,7 +14054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4187448e-9c2a-4021-ad92-fb65840f2721
-  instanceId: d826c0a7-9439-4652-98f6-f9681ae33660
+  instanceId: c0b950a5-1cbd-4cd9-a74b-1345bc0cbeac
   version: 1
 --- !u!114 &4554859854134525993
 MonoBehaviour:
@@ -16667,7 +16712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: 553d7fd0-0627-4dfc-8e94-7f042c0d86c8
+  instanceId: 47b7d614-b85e-4d92-9255-caa92f25ca70
   version: 1
 --- !u!114 &8805454161283217354
 MonoBehaviour:
@@ -16871,7 +16916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 8fefac10-a304-49a0-9929-1c774a7296d0
+  instanceId: ed39407b-c3c5-4310-8b5b-084e36b2cd39
   version: 1
 --- !u!114 &4926837846945850280
 MonoBehaviour:
@@ -17412,7 +17457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5d47ae98-1ed8-4753-ac7f-c41012479e3d
-  instanceId: db405a88-536c-40c2-8c38-7c8dc0f26834
+  instanceId: 53949cc0-1d99-4696-90db-10fc7be452e2
   version: 1
 --- !u!114 &4671195503227028109
 MonoBehaviour:
@@ -18573,7 +18618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: e712cc68-e03f-46d8-91ee-e12db662b5de
+  instanceId: 3a275fcb-3e47-4bee-9d4c-cd29590d0cb3
   version: 1
 --- !u!114 &946236061270714960
 MonoBehaviour:

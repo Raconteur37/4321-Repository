@@ -46,12 +46,12 @@ public class PotManager : MonoBehaviour
         
         if (soilGO != null)
         {
-            //soilGO.SetActive(false);
+            soilGO.SetActive(false);
         }
         
         if (plantGO != null)
         {
-            //plantGO.SetActive(false);
+            plantGO.SetActive(false);
         }
 
         plant = new AloeVera(); // For now
@@ -168,6 +168,14 @@ public class PotManager : MonoBehaviour
         } 
     }
 
+    public void updatePlantGO()
+    {
+        if (plant != null)
+        {
+            plantGO.SetActive(true);
+        }
+    }
+
     public GameObject getPotObject()
     {
         return pot.getGameObject();
@@ -181,7 +189,7 @@ public class PotManager : MonoBehaviour
     public void setSoil(Soil soil)
     {
         this.soil = soil;
-        Debug.Log("Soil has been set");
+        updateSoilGO();
     }
 
     public void setPlant(PlantClass plant)
@@ -190,6 +198,7 @@ public class PotManager : MonoBehaviour
         Debug.Log("it's set");
         if (plant != null)
         {
+            updatePlantGO();
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
