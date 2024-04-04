@@ -158,6 +158,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
+      propertyPath: ShapeModule.arc.spread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
       propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -178,7 +183,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
         type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
       propertyPath: ColorBySpeedModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823805400841025000, guid: ba778f27c88534c4ba725bd588e5ce6d,
+        type: 3}
+      propertyPath: ShapeModule.m_TextureAlphaAffectsParticles
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770670286796703236, guid: ba778f27c88534c4ba725bd588e5ce6d,
