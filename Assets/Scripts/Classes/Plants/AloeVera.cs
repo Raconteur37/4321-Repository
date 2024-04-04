@@ -23,7 +23,8 @@
             
             setGrowing(true);
             
-            setStatus(0.01);
+            setStatus(0.1);
+            setStatusCap(2.5f);
             
             setState("Seedling");
             

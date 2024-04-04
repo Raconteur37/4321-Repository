@@ -16,13 +16,18 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Soil soil;
     private PlantClass plant;
     
-    [SerializeField] float updateTime = 5f; //timeframe variable
+    [SerializeField] float updateTime = 20f; //timeframe variable
+    
     private Vector3 offset = new Vector3(-.3f, .5f, 0f); // Adjust the offset as needed
     private Vector3 offset1 = new Vector3(1f, .5f, 0f);
     private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
     private GameObject plantGO = null;
+    
+    private float xPlantScale = 0.0f;
+    private float yPlantScale = 0.0f;
+    private float zPlantScale = 0.0f;
     
     public void getSunStatus(string status)
     {
@@ -36,17 +41,17 @@ public class PotManager : MonoBehaviour
     private void Start()
     {
         
-        GameObject soilGO = GameObject.Find("Soil_Physical");
-        GameObject plantGO = GameObject.Find("Plant_Physical");
+        soilGO = GameObject.Find("Soil_Physical");
+        plantGO = GameObject.Find("Plant_Physical");
         
         if (soilGO != null)
         {
-            soilGO.SetActive(false);
+            //soilGO.SetActive(false);
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(false);
+            //plantGO.SetActive(false);
         }
 
         plant = new AloeVera(); // For now
@@ -84,16 +89,51 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+    
+    private float getPlantXScale()
+    {
+        return xPlantScale;
+    }
+    
+    private float getPlantYScale()
+    {
+        return yPlantScale;
+    }
+    
+    private float getPlantZScale()
+    {
+        return zPlantScale;
+    }
 
+    private GameObject getPlantGO()
+    {
+        return plantGO;
+    }
+
+    
     private void Update()
     {
 
-        if (plant != null)  
+        if (plant != null && !plant.getIsFullyGrown())  
         {
             if (tempUpdateCounter <= 0f) 
             {
                 plant.updatePlant();
+                
+                updatePlantStatsUI();
+                
                 plant.toString();
+                
+                double status = plant.getStatus();
+
+                Debug.Log(status);
+                
+                xPlantScale = (float)status;
+                yPlantScale = (float)status;
+                zPlantScale = (float)status;
+                
+                plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
+                
                 tempUpdateCounter = updateTime;  //reset the timer or cd
             }
             else {
