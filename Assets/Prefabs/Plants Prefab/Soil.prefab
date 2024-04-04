@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1318275550846522209}
   - component: {fileID: -7899323054093123609}
   - component: {fileID: 1163343149933990187}
+  - component: {fileID: 4911145230147134524}
   m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
@@ -142,8 +143,23 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4911145230147134524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937218039121557462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockId: 
+  instanceId: 3d791ec9-2bc7-45c1-91d4-98254a0afa26
+  version: 1
