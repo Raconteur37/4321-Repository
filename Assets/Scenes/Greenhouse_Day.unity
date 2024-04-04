@@ -1500,8 +1500,23 @@ PrefabInstance:
       objectReference: {fileID: 997703523}
     - target: {fileID: 2955468374344699069, guid: dd5177e53242249ffa89e8c2bf7436e8,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955468374344699069, guid: dd5177e53242249ffa89e8c2bf7436e8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955468374344699069, guid: dd5177e53242249ffa89e8c2bf7436e8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955468374344699069, guid: dd5177e53242249ffa89e8c2bf7436e8,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.696
+      value: 1.079
       objectReference: {fileID: 0}
     - target: {fileID: 2955468374344699069, guid: dd5177e53242249ffa89e8c2bf7436e8,
         type: 3}
@@ -1637,8 +1652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83449e6c2070d804e81596e2a97eef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabEventsTransformer: {fileID: 0}
-  _realtimeTransform: {fileID: 0}
+  _grabEventsTransformer: {fileID: 997703532}
+  _realtimeTransform: {fileID: 997703533}
 --- !u!114 &997703532
 MonoBehaviour:
   m_ObjectHideFlags: 0
