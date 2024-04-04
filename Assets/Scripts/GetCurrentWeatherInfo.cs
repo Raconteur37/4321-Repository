@@ -159,7 +159,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         {
             shownWeatherInfo = true;
 
-            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F";
+            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F City Name: {weatherData.CityName}";
 
             Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
