@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rain : MonoBehaviour
 {
     // Start is called before the first frame update
+
 
     public void rainStatus(string status)
     {
@@ -20,13 +23,14 @@ public class Rain : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
-
+        //gameObject.SetActive(false);
     }
 
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
     }

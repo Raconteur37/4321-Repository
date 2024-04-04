@@ -936,7 +936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &635107889
 Transform:
   m_ObjectHideFlags: 0
@@ -1658,8 +1658,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1773690306}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 689319257819343426, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1457145603801624572, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
       propertyPath: m_Name
@@ -1668,12 +1673,12 @@ PrefabInstance:
     - target: {fileID: 1457145603801624572, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1611477577922847401, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
       propertyPath: TriggerModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7091774269296139651, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
@@ -1683,12 +1688,12 @@ PrefabInstance:
     - target: {fileID: 7091774269296139651, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.23
+      value: 13.12
       objectReference: {fileID: 0}
     - target: {fileID: 7091774269296139651, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7091774269296139651, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
         type: 3}
@@ -2244,12 +2249,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1231232637}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1486098251 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7091774269296139651, guid: 0ff15ca080b614d39a5c77a70a4d5a6f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1231232637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1486098252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,7 +2514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1674209226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2741,7 +2740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968cde1fb5c18f42a61dea988d69cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 503812177}
 --- !u!224 &1773690306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2754,7 +2753,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1486098251}
   - {fileID: 709027584}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3787,6 +3785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aloe_Grabbable_Pot
       objectReference: {fileID: 0}
+    - target: {fileID: 6360719014525281331, guid: c4ba408a3e5754a718e26de622290983,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4211,6 +4214,7 @@ SceneRoots:
   - {fileID: 1404009503}
   - {fileID: 3031158}
   - {fileID: 507772097007060096}
+  - {fileID: 1231232637}
   - {fileID: 1773690306}
   - {fileID: 1886949429}
   - {fileID: 635107889}

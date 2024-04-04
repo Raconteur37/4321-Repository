@@ -115,7 +115,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         [JsonProperty("sunset")] public int SunsetTime { get; set; }
     }
 
-    class OpenWeatherResponse
+    public class OpenWeatherResponse
     {
         [JsonProperty("coord")] public GetCurrentWeatherInfo.OpenWeather_Coordinates Location { get; set; }
         [JsonProperty("weather")] public List<OpenWeather_Condition> WeatherConditions { get; set; }
@@ -144,27 +144,44 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     public Text text;
 
+    public void changeRainButton()
+    {
+        foreach(var conditions in weatherData.WeatherConditions)
+        {
+            if(conditions.Group == "Rain")
+            {
+                conditions.Group = "Clear";
+                Debug.Log("turning rain off");
+            }
+            else
+            {
+                conditions.Group = "Rain";
+                Debug.Log("turning rain on");
+            }
+            //FindObjectOfType<Rain>().rainStatus(conditions.Group);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(GetWeather_Stage1_PublicIP());
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (phase == Ephase.Succeeded && !shownWeatherInfo)
         {
+            
             shownWeatherInfo = true;
 
-            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F City Name: {weatherData.CityName}";
+            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
 
             Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
-
-
 
             foreach(var conditions in weatherData.WeatherConditions)
             {
@@ -189,6 +206,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             {
                 publicIP = request.downloadHandler.text.Trim();
                 StartCoroutine(GetWeather_stage2_GeoInfo());
+                Debug.Log("get weather IP address");
             }
             else
             {
@@ -216,6 +234,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             {
                 GeographicData = JsonConvert.DeserializeObject<geoPluginResponse>(request.downloadHandler.text);
                 StartCoroutine(GetWeather_Stage3_WeatherInfo());
+                Debug.Log("getting longitude and latitude");
             }
             else
             {
@@ -250,6 +269,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             {
                 weatherData = JsonConvert.DeserializeObject<OpenWeatherResponse>(request.downloadHandler.text);
                 phase = Ephase.Succeeded;
+                Debug.Log("getting city data");
             }
             else
             {
@@ -262,3 +282,4 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         yield return null;
     }
 }
+
