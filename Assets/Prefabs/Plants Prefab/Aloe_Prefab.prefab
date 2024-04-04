@@ -69,10 +69,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1b62012e73963478358f33a29acd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pot: {fileID: 0}
+  pot: {fileID: 11400000, guid: 418943f34d1ee2b4e8682bdd4cf9f8c0, type: 2}
   plantstatsUI: {fileID: 0}
-  soil: {fileID: 0}
+  soil: {fileID: 11400000, guid: 6dd36619947671047884a869b1d7cb32, type: 2}
   plant: {fileID: 0}
+  updateTime: 5
+  offset: {x: 1, y: 0.5, z: 0}
 --- !u!1 &2789762500700420465
 GameObject:
   m_ObjectHideFlags: 0
