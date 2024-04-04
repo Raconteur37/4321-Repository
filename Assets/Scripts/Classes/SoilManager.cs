@@ -9,8 +9,6 @@ public class SoilManager : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Triggered the event");
-
         if (other.CompareTag("Pot"))
         {
             PotManager potManager = other.GetComponent<PotManager>();
@@ -20,6 +18,7 @@ public class SoilManager : MonoBehaviour
 
                 case ("Sandy"):
                     potManager.setSoil(new Soil("Sandy"));
+                    Debug.Log("Triggered the event");
                     break;
 
                 case ("Loam"):

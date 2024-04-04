@@ -6,7 +6,7 @@ namespace Classes.Plants
     public class PlantClass
     {
         
-        private double waterRangePercent, sunlightPercentage, status; // All will be out of a decimal from 0-1...indicating the percentage of their respective range...status is the overall 
+        private double waterRangePercent, sunlightPercentage, status, statusCap; // All will be out of a decimal from 0-1...indicating the percentage of their respective range...status is the overall 
         // percent that they are at 0 being a seed, 1 being fully grown.
         private double waterDrainMultiplier, sunlightDrainMultiplier; // These will be case by case for each plant and determine how much sunlight and water will drain
         // every tick
@@ -41,7 +41,12 @@ namespace Classes.Plants
                         isGrowing = true;
                         healthString = "Healthy";
 
-                        
+                        status += .1;
+
+                        if (status >= statusCap)
+                        {
+                            isFullyGrown = true;
+                        }
 
                     }
                     else
@@ -206,6 +211,21 @@ namespace Classes.Plants
                            waterAmount + "\n Sun Range: " + sunlightMinRange + "-" + sunlightMaxRange +
                            "\n Water Range: " + waterMinRange + "-" + waterMaxRange;
         Debug.Log(outString);
+    }
+
+    public double getStatus()
+    {
+        return status;
+    }
+
+    public bool getIsFullyGrown()
+    {
+        return isFullyGrown;
+    }
+
+    public void setStatusCap(float cap)
+    {
+        statusCap = cap;
     }
         
     }
