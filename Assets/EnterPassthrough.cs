@@ -14,7 +14,7 @@ public class EnterPassthrough : MonoBehaviour
         {
             oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
             oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Overlay;
-            greenHouse.SetActive(false);
+            //greenHouse.SetActive(false);
             passThrough.SetActive(true);
         }
     }
