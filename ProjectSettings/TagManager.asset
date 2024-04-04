@@ -9,6 +9,7 @@ TagManager:
   - Selectable
   - Cube
   - Greenhouse
+  - GreenhouseBoundary
   layers:
   - Default
   - TransparentFX

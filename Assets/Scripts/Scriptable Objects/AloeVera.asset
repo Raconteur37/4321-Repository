@@ -15,9 +15,9 @@ MonoBehaviour:
   waterRangePercent: 0
   sunlightPercentage: 0
   status: 0
-  waterDrainMultiplier: 0
-  sunlightDrainMultiplier: 0
-  waterAmount: 20
+  waterDrainMultiplier: 0.3
+  sunlightDrainMultiplier: 0.5
+  waterAmount: 30
   sunlightAmount: 50
   waterMinRange: 20
   sunlightMinRange: 30

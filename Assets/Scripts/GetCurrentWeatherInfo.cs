@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 public class GetCurrentWeatherInfo : MonoBehaviour
 {
@@ -141,10 +142,14 @@ public class GetCurrentWeatherInfo : MonoBehaviour
     OpenWeatherResponse weatherData;
     bool shownWeatherInfo = false;
 
+    public Text text;
+
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(GetWeather_Stage1_PublicIP());
+        
     }
 
     // Update is called once per frame
@@ -154,11 +159,18 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         {
             shownWeatherInfo = true;
 
+            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F";
+
             Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
+
+
+
             foreach(var conditions in weatherData.WeatherConditions)
             {
-                Debug.Log($"{conditions.Group}: {conditions.Description}");
+                Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
+                FindObjectOfType<Rain>().rainStatus(conditions.Group);
+                FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
             }
         }
     }

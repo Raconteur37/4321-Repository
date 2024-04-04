@@ -1,6 +1,6 @@
 ﻿namespace Classes.Plants
 {
-    public class AloeVera : Plant
+    public class AloeVera : PlantClass
     {
 
         public AloeVera()

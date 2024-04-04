@@ -293,10 +293,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 824115238}
-    - targetCorrespondingSourceObject: {fileID: 4811635493839956651, guid: ba778f27c88534c4ba725bd588e5ce6d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 824115240}
   m_SourcePrefab: {fileID: 100100000, guid: ba778f27c88534c4ba725bd588e5ce6d, type: 3}
 --- !u!1 &505768450
 GameObject:
@@ -574,23 +570,6 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: eeaa10ac98cad458c9410800ad4674dc, type: 3}
   potTransform: {fileID: 724852242}
   triggerDistance: 3
---- !u!114 &824115240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824115225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea81b0c4f1c7c468bb423486e2649947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potTransform: {fileID: 724852242}
-  activateRange: 2
-  tiltAngle: 1
-  tiltSpeed: 5
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &843089196
 PrefabInstance:
   m_ObjectHideFlags: 0
