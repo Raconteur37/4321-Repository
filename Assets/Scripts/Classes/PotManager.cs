@@ -17,7 +17,8 @@ public class PotManager : MonoBehaviour
     private PlantClass plant;
     
     [SerializeField] float updateTime = 5f; //timeframe variable
-    [SerializeField] private Vector3 offset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
+    private Vector3 offset = new Vector3(-.3f, .5f, 0f); // Adjust the offset as needed
+    private Vector3 offset1 = new Vector3(1f, .5f, 0f);
     private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
@@ -111,7 +112,8 @@ public class PotManager : MonoBehaviour
                     Vector3 uiPosition = transform.position + offset;
                     plantstatsUI.transform.position = uiPosition;
                     plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
-                    plantstatsUI1.transform.position = uiPosition;
+                    Vector3 uiPosition1 = transform.position + offset1;
+                    plantstatsUI1.transform.position = uiPosition1;
                     plantstatsUI1.gameObject.SetActive(!plantstatsUI1.gameObject.activeSelf);
                 }
             }
