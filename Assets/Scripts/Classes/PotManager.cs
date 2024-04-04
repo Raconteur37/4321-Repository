@@ -159,6 +159,15 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+    public void VRUISelect()
+    {
+        Vector3 uiPosition = transform.position + offset;
+        plantstatsUI.transform.position = uiPosition;
+        plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
+        Vector3 uiPosition1 = transform.position + offset1;
+        plantstatsUI1.transform.position = uiPosition1;
+        plantstatsUI1.gameObject.SetActive(!plantstatsUI1.gameObject.activeSelf);
+    }
 
     public void updateSoilGO()
     {
