@@ -32,6 +32,7 @@ public class SoilManager : MonoBehaviour
             }
 
             potManager.updateSoilGO();
+            gameObject.SetActive(false);
 
 
         }

@@ -24,7 +24,7 @@ public class SeedPacketManager : MonoBehaviour
                     Debug.Log("setting aloe");
                     break;
             }
-
+            gameObject.SetActive(false);
         }
-        }
+    }
 }

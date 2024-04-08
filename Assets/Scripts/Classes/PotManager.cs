@@ -105,12 +105,25 @@ public class PotManager : MonoBehaviour
         return zPlantScale;
     }
 
-    private GameObject getPlantGO()
+    public GameObject getPlantGO()
     {
         return plantGO;
     }
 
-    
+    public GameObject getSoilGO()
+    {
+        return soilGO;
+    }
+    public void setPlantGOFalse()
+    {
+        plantGO.SetActive(false);
+    }
+
+    public void setSoilGOFalse()
+    {
+        soilGO.SetActive(false);
+    }
+
     private void Update()
     {
 
