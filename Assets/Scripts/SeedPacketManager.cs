@@ -20,8 +20,13 @@ public class SeedPacketManager : MonoBehaviour
             {
 
                 case ("Aloe Vera"):
-                    potManager.setPlant(new AloeVera());
-                    Debug.Log("setting aloe");
+                    AloeVera aloe = new AloeVera();
+                    potManager.setPlant(aloe);
+                    //Debug.Log("setting aloe");
+                    if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
+                    {
+                        potManager.getPlant().setIsInPerferedSoil(true);
+                    }
                     break;
             }
             gameObject.SetActive(false);
