@@ -8,6 +8,8 @@ public class EnterPassthrough : MonoBehaviour
     public GameObject greenHouse;
     public GameObject passThrough;
     public GameObject cameraRig;
+    public GameObject vrWindow;
+
 
     void OnCollisionEnter(Collision col)
     {
@@ -24,6 +26,8 @@ public class EnterPassthrough : MonoBehaviour
 
             greenHouse.SetActive(false);
             passThrough.SetActive(true);
+            vrWindow.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 
