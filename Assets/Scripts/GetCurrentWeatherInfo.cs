@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
 using UnityEngine.UI;
-
+using TMPro;
 public class GetCurrentWeatherInfo : MonoBehaviour
 {
     const string URL_GetPublicIP = "https://api.ipify.org/";
     const string URL_GetGeographicData = "http://www.geoplugin.net/json.gp?ip=";
     const string URL_GetWeatherData = "http://api.openweathermap.org/data/2.5/weather";
+    [SerializeField] private Canvas weatherUI;
+    [SerializeField] private Sprite sunny;
+    [SerializeField] private Sprite cloudy;
+    [SerializeField] private Sprite rainy;
 
     #region weather api key
     const string apiKey = "ddc441a6f25d5cd3c70a5a90d50a813e";
@@ -166,7 +170,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
     void Start()
     {
         StartCoroutine(GetWeather_Stage1_PublicIP());
-
+       
     }
 
     // Update is called once per frame
@@ -182,13 +186,80 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
             Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
+            Debug.Log($"Humidity: {weatherData.KeyInfo.Humidity}");
+            Debug.Log("Before");
+            if (!weatherUI.gameObject.activeSelf)
+            {
+                weatherUI.gameObject.SetActive(true);
+            }
+            TextMeshProUGUI[] texts = weatherUI.GetComponentsInChildren<TextMeshProUGUI>();
+            Image[] images = weatherUI.GetComponentsInChildren<Image>();
+            Debug.Log("After");
+            Debug.Log($"Text Length {texts.Length}");
+            foreach (TextMeshProUGUI TMP in texts)
+            {
+                Debug.Log(TMP.name);
+                if (TMP.name == "CurrentLocation")
+                {
+                    Debug.Log("Found CurrentLocation");
+                    TMP.text = weatherData.CityName;
+                }
+                else if (TMP.name == "CurrentTemp")
+                {
+                    TMP.text = weatherData.KeyInfo.Temperature.ToString();
+                }
+                else if (TMP.name == "CurrentHumidity")
+                {
+                    TMP.text = weatherData.KeyInfo.Humidity.ToString() + "%";
 
-            foreach(var conditions in weatherData.WeatherConditions)
+                }
+                else if (TMP.name == "WeatherLabel")
+                {
+                    foreach (var conditions in weatherData.WeatherConditions)
+                    {
+                        if (conditions.Group == "Clouds")
+                        {
+                            TMP.text = "Cloudy";
+                            foreach (Image temp in images)
+                            {
+                                if (temp.name == "WeatherIcon")
+                                {
+                                    temp.sprite = cloudy;
+                                }
+                            }
+                        }
+                        else if(conditions.Group == "Rain")
+                        {
+                            TMP.text = "Rainy";
+                            foreach (Image temp in images)
+                            {
+                                if (temp.name == "WeatherIcon")
+                                {
+                                    temp.sprite = rainy;
+                                }
+                            }
+                        }
+                        else if(conditions.Group == "Clear")
+                        {
+                            TMP.text = "Sunny";
+                            foreach (Image temp in images)
+                            {
+                                if (temp.name == "WeatherIcon")
+                                {
+                                    temp.sprite = sunny;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (var conditions in weatherData.WeatherConditions)
             {
                 Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
                 FindObjectOfType<Rain>().rainStatus(conditions.Group);
                 FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
             }
+
         }
     }
 
