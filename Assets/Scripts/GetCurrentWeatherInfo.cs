@@ -217,7 +217,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
                 {
                     foreach (var conditions in weatherData.WeatherConditions)
                     {
-                        if (conditions.Group == "Clouds")
+                        if (conditions.Group == "Cloud")
                         {
                             TMP.text = "Cloudy";
                             foreach (Image temp in images)
