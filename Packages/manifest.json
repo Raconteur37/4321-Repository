@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.normalvr.normcore": "2.9.4",
+    "com.normalvr.normcore": "2.9.5",
     "com.solersoft.mrmusk": "https://github.com/SolerSoft/mr-musk.git?path=/Assets/Packages/com.solersoft.mrmusk",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.formats.fbx": "4.2.1",
