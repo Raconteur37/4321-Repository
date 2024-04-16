@@ -18,7 +18,7 @@ public class SoilManager : MonoBehaviour
 
                 case ("Sandy"):
                     potManager.setSoil(new Soil("Sandy"));
-                    Debug.Log("Triggered the event");
+                    //Debug.Log("Triggered the event");
                     break;
 
                 case ("Loam"):
@@ -32,6 +32,7 @@ public class SoilManager : MonoBehaviour
             }
 
             potManager.updateSoilGO();
+            gameObject.SetActive(false);
 
 
         }

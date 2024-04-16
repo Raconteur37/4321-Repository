@@ -16,7 +16,7 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Soil soil;
     private PlantClass plant;
     
-    [SerializeField] float updateTime = 20f; //timeframe variable
+    [SerializeField] float updateTime; //timeframe variable
     
     private Vector3 offset = new Vector3(-.3f, .5f, 0f); // Adjust the offset as needed
     private Vector3 offset1 = new Vector3(1f, .5f, 0f);
@@ -33,9 +33,16 @@ public class PotManager : MonoBehaviour
     {
         if (status == "Clear")
         {
-            Debug.Log("Plant will grow faster while sun is out");
+            //Debug.Log("Plant will grow faster while sun is out");
             plant.isPlantInSun(true);
         }
+
+        if (status != "Rain")
+        {
+            plant.isPlantInSun(false);
+        }
+        
+        
     }
 
     private void Start()
@@ -43,6 +50,9 @@ public class PotManager : MonoBehaviour
         
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
+        
+        //plant = new AloeVera(); // For now
+        //soil = new Soil("Sandy"); // Temp
         
         if (soilGO != null)
         {
@@ -53,10 +63,7 @@ public class PotManager : MonoBehaviour
         {
             plantGO.SetActive(false);
         }
-
-        plant = new AloeVera(); // For now
-
-
+        
 
     }
     private void updatePlantStatsUI()
@@ -89,6 +96,11 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+
+    public PlantClass getPlant()
+    {
+        return plant;
+    }
     
     private float getPlantXScale()
     {
@@ -105,41 +117,58 @@ public class PotManager : MonoBehaviour
         return zPlantScale;
     }
 
-    private GameObject getPlantGO()
+    public GameObject getPlantGO()
     {
         return plantGO;
     }
 
-    
+    public GameObject getSoilGO()
+    {
+        return soilGO;
+    }
+    public void setPlantGOFalse()
+    {
+        plantGO.SetActive(false);
+    }
+
+    public void setSoilGOFalse()
+    {
+        soilGO.SetActive(false);
+    }
+
     private void Update()
     {
-
-        if (plant != null && !plant.getIsFullyGrown())  
+        
+        if (tempUpdateCounter <= 0f)  
         {
-            if (tempUpdateCounter <= 0f) 
+            if (plant != null && !plant.getIsFullyGrown())
             {
+
+                //Debug.Log("Called update in pot manager");
+
                 plant.updatePlant();
-                
+
                 updatePlantStatsUI();
-                
-                plant.toString();
-                
+
+                //plant.toString();
+
                 double status = plant.getStatus();
 
-                Debug.Log(status);
-                
+                //Debug.Log(status);
+
                 xPlantScale = (float)status;
                 yPlantScale = (float)status;
                 zPlantScale = (float)status;
                 
                 plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
                 
-                tempUpdateCounter = updateTime;  //reset the timer or cd
+
+                tempUpdateCounter = updateTime; //reset the timer or cd
             }
-            else {
-                tempUpdateCounter -= Time.deltaTime;  //take down time 
-            }   
         }
+        
+        tempUpdateCounter -= Time.deltaTime;  //take down time 
+        
         if (Input.GetMouseButtonDown(0) && plant != null)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -158,6 +187,15 @@ public class PotManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void VRUISelect()
+    {
+        Vector3 uiPosition = transform.position + offset;
+        plantstatsUI.transform.position = uiPosition;
+        plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
+        Vector3 uiPosition1 = transform.position + offset1;
+        plantstatsUI1.transform.position = uiPosition1;
+        plantstatsUI1.gameObject.SetActive(!plantstatsUI1.gameObject.activeSelf);
     }
 
     public void updateSoilGO()

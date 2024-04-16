@@ -1,0 +1,11 @@
+Model Information:
+* title:	Package Box Free
+* source:	https://sketchfab.com/3d-models/package-box-free-78440f26dbb64b9ea0edf1a218ab8090
+* author:	Duppy (https://sketchfab.com/Duppy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Package Box Free" (https://sketchfab.com/3d-models/package-box-free-78440f26dbb64b9ea0edf1a218ab8090) by Duppy (https://sketchfab.com/Duppy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
