@@ -16,20 +16,27 @@ public class SeedPacketManager : MonoBehaviour
 
             PotManager potManager = other.GetComponent<PotManager>();
 
-            switch (seedPacket.getDisplayName())
-            {
 
-                case ("Aloe Vera"):
-                    AloeVera aloe = new AloeVera();
-                    potManager.setPlant(aloe);
-                    //Debug.Log("setting aloe");
-                    if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
-                    {
-                        potManager.getPlant().setIsInPerferedSoil(true);
-                    }
-                    break;
+            if (potManager.getSoil() != null)
+            {
+                
+                switch (seedPacket.getDisplayName())
+                {
+
+                    case ("Aloe Vera"):
+                        AloeVera aloe = new AloeVera();
+                        potManager.setPlant(aloe);
+                        //Debug.Log("setting aloe");
+                        if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
+                        {
+                            potManager.getPlant().setIsInPerferedSoil(true);
+                        }
+                        break;
+                }
+                gameObject.SetActive(false);
+                
+                
             }
-            gameObject.SetActive(false);
         }
     }
 }
