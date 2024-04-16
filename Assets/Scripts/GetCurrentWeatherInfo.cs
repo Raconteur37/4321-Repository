@@ -158,7 +158,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
                 conditions.Group = "Rain";
                 Debug.Log("turning rain on");
             }
-            //FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            FindObjectOfType<Rain>().rainStatus(conditions.Group);
         }
     }
 

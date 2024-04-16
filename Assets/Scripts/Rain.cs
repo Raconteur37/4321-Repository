@@ -8,17 +8,20 @@ public class Rain : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField] GameObject rainParent;
+    [SerializeField] GameObject rain;
+
 
     public void rainStatus(string status)
     {
         if (status == "Rain")
         {
-            gameObject.SetActive(true);
+            rain.SetActive(true);
             Debug.Log("setting rain to active");
         }
         else
         {
-            gameObject.SetActive(false);
+            rain.SetActive(false);
             Debug.Log("setting rain to non active");
         }
     }
