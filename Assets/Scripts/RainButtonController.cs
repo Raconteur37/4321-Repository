@@ -47,6 +47,7 @@ public class RainButtonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X button on keyboard was pressed");
+            FindAnyObjectByType<GetCurrentWeatherInfo>().changeRainButton();
         }
     }
 }
