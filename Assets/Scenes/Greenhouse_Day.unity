@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1580,6 +1580,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522761159}
   m_Mesh: {fileID: 4728585798023540250, guid: a7bf85ae161f34bc683308a7879f2d61, type: 3}
+--- !u!1 &534875167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3687114256401518566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &599756060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7517,11 +7523,87 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3687114256401518569}
+    - targetCorrespondingSourceObject: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3687114256401518568}
+    - targetCorrespondingSourceObject: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3687114256401518571}
   m_SourcePrefab: {fileID: 100100000, guid: 71d1fd243ea9d37448b181ff6e2c43c7, type: 3}
 --- !u!4 &3687114256401518567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7359191537042326251, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3687114256401518566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3687114256401518568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534875167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _surface: {fileID: 3687114256401518569}
+  _selectSurface: {fileID: 0}
+  _movementProvider: {fileID: 0}
+  _tiebreakerScore: 0
+--- !u!114 &3687114256401518569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534875167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2140d2b457bea84881488302059889b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 3687114256401518570}
+--- !u!65 &3687114256401518570 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 253372618521253960, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3687114256401518566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3687114256401518571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534875167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb5261d7cd290b4eacc0fd20e2db09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 3687114256401518568}
+  _renderer: {fileID: 3687114256401518572}
+  _normalColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  _hoverColor: {r: 0.9811381, g: 1, b: 0, a: 0.11764706}
+  _selectColor: {r: 1, g: 0.216981, b: 0.216981, a: 0.11372549}
+  _disabledColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+--- !u!23 &3687114256401518572 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5487747440831387916, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
     type: 3}
   m_PrefabInstance: {fileID: 3687114256401518566}
   m_PrefabAsset: {fileID: 0}

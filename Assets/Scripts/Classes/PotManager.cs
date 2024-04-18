@@ -51,17 +51,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        //plant = new AloeVera(); // For now
-        //soil = new Soil("Sandy"); // Temp
+        plant = new AloeVera(); // For now
+        soil = new Soil("Sandy"); // Temp
         
         if (soilGO != null)
         {
-            soilGO.SetActive(false);
+            soilGO.SetActive(true);
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(false);
+            plantGO.SetActive(true);
         }
         
 
@@ -190,6 +190,7 @@ public class PotManager : MonoBehaviour
     }
     public void VRUISelect()
     {
+        Debug.Log("Selector");
         Vector3 uiPosition = transform.position + offset;
         plantstatsUI.transform.position = uiPosition;
         plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
