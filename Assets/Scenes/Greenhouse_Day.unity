@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7536,6 +7536,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3687114256401518571}
+    - targetCorrespondingSourceObject: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3687114256401518573}
   m_SourcePrefab: {fileID: 100100000, guid: 71d1fd243ea9d37448b181ff6e2c43c7, type: 3}
 --- !u!4 &3687114256401518567 stripped
 Transform:
@@ -7607,6 +7611,67 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 3687114256401518566}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3687114256401518573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534875167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 3687114256401518568}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3687114256401518574}
+        m_TargetAssemblyTypeName: PotManager, Assembly-CSharp
+        m_MethodName: VRUISelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3687114256401518574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9183048725869272065, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3687114256401518566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534875167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1b62012e73963478358f33a29acd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &4007696697442418302
 MeshRenderer:
   m_ObjectHideFlags: 0
