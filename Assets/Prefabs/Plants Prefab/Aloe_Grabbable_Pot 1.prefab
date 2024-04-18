@@ -239,6 +239,7 @@ MonoBehaviour:
   pot: {fileID: 11400000, guid: 418943f34d1ee2b4e8682bdd4cf9f8c0, type: 2}
   plantstatsUI: {fileID: 8936244811925811726}
   plantstatsUI1: {fileID: 8877373062765321277}
+  soil: {fileID: 0}
   updateTime: 5
 --- !u!65 &253372618521253960
 BoxCollider:
