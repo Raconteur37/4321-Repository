@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.normalvr.normcore": "2.9.3",
+    "com.normalvr.normcore": "2.9.5",
     "com.solersoft.mrmusk": "https://github.com/SolerSoft/mr-musk.git?path=/Assets/Packages/com.solersoft.mrmusk",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.formats.fbx": "4.2.1",
@@ -10,7 +10,7 @@
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.render-pipelines.universal": "14.0.9",
     "com.unity.test-framework": "1.1.33",
-    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.textmeshpro": "3.0.8",
     "com.unity.timeline": "1.7.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.1",

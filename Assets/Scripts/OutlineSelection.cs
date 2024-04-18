@@ -1,15 +1,15 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OutlineSelection : MonoBehaviour
+public class OutlineSelectionVR : MonoBehaviour
 {
     private Transform highlight;
     private Transform selection;
     private RaycastHit raycastHit;
 
+    // Update is called once per frame
     void Update()
     {
         // Highlight
@@ -18,8 +18,12 @@ public class OutlineSelection : MonoBehaviour
             highlight.gameObject.GetComponent<Outline>().enabled = false;
             highlight = null;
         }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
+
+        // Use VR controller position to cast a ray
+        Ray ray = new Ray(transform.position, transform.forward);
+
+        // Check for VR controller input instead of mouse input
+        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
         {
             highlight = raycastHit.transform;
             if (highlight.CompareTag("Selectable") && highlight != selection)
@@ -65,5 +69,4 @@ public class OutlineSelection : MonoBehaviour
             }
         }
     }
-
 }

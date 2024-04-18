@@ -2,44 +2,20 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
-    private bool isParticleSystemPlaying = false;
-
-    void Start()
-    {
-        // Assuming the particle system is already attached to the same GameObject
-        particleSystem = GetComponent<ParticleSystem>();
-        StopParticleSystem(); // Ensure particle system starts in a stopped state
-    }
+    public ParticleSystem particleSystem;
 
     void Update()
     {
-        // Check for input to start or stop the particle system
+        // Turn on particle system when 'O' key is pressed
         if (Input.GetKeyDown(KeyCode.O))
         {
-            StartParticleSystem();
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            StopParticleSystem();
-        }
-    }
-
-    void StartParticleSystem()
-    {
-        if (particleSystem != null && !isParticleSystemPlaying)
-        {
             particleSystem.Play();
-            isParticleSystemPlaying = true;
         }
-    }
 
-    void StopParticleSystem()
-    {
-        if (particleSystem != null && isParticleSystemPlaying)
+        // Turn off particle system when 'P' key is pressed
+        if (Input.GetKeyDown(KeyCode.P))
         {
             particleSystem.Stop();
-            isParticleSystemPlaying = false;
         }
     }
 }

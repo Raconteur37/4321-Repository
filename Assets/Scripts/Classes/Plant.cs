@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
@@ -14,54 +15,17 @@ public class Plant : ScriptableObject
     [SerializeField] private double waterAmount, sunlightAmount; // These are int amount of water and sun you can give to a plant
     [SerializeField] private int waterMinRange, sunlightMinRange = 0; // These are the ranges of the sunlight and the water needed to maintain the plant...
         // These will be initiated on a plant by plant basis depending on the type of plant you are trying to grow
-    [SerializeField] private int waterMaxRange = 100, sunlightMaxRange = 100;
-    [SerializeField] private string plantName, ownerName, healthString, state, description; // Basic string values...state is the current state the plant is in 
+    [SerializeField] private int waterMaxRange, sunlightMaxRange;
+    [SerializeField] private string plantName, ownerName, healthString = "", state, description; // Basic string values...state is the current state the plant is in 
     [SerializeField] private Sprite plantImage; // Sprite of the image of the plant pulled from web API
     [SerializeField] private Mesh mesh;
-    [SerializeField] private bool isGrowing, hasSunlight, isFullyGrown, isSeedling, waterIsInRange, sunlightIsInRange;
+    [SerializeField] private bool isGrowing, hasSunlight, isFullyGrown, waterIsInRange, sunlightIsInRange;
 
     public Plant() // Add a constructor for the persons' name
     {
         
     }
-    
-    
-    public double getWaterRangePercent()
-    {
-        return 0.0;
-    }
 
-    public double getSunlightPercentage()
-    {
-        return 0.0;
-    }
-
-    public double getWaterAmount()
-    {
-        return waterAmount;
-    }
-
-    public double getSunlightAmount()
-    {
-        return sunlightAmount;
-    }
-
-    public void setWaterAmount(double amount)
-    {
-        this.waterAmount = amount;
-    }
-
-    public bool getWaterIsInRange()
-    {
-        // This method will compare the water range percentage with the min and max range, and will return a boolean variable indicating as to whether it should be wilting or not.
-        return waterIsInRange;
-    }
-
-    public double getWaterDrainMultiplier()
-    {
-        return waterDrainMultiplier;
-    }
-    
     
 
 }

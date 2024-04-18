@@ -10,30 +10,40 @@ public class SeedPacket : ScriptableObject
     [SerializeField] string displayName;
     [SerializeField] Plant plant;
     // Start is called before the first frame update
-    public void OnTriggerEnter(Collider other)
+    public string getDisplayName()
     {
-        if (other.CompareTag("Pot")){
-            
-            PotManager potManager = other.GetComponent<PotManager>();
+        return displayName;
+    }
 
-            switch(displayName)
-            {
+    public Plant getPlant()
+    {
+        return plant;
+    }
+
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Pot")){
+            
+    //        PotManager potManager = other.GetComponent<PotManager>();
+
+    //        switch(displayName)
+    //        {
                 
-                case("Aloe Vera"):
-                    potManager.setPlant(new AloeVera());
-                    break;
+    //            case("Aloe Vera"):
+    //                potManager.setPlant(new AloeVera());
+    //                break;
                 
-                case("Loam"):
-                    potManager.setSoil(new Soil("Loam"));
-                    break;
+    //            case("Loam"):
+    //                potManager.setSoil(new Soil("Loam"));
+    //                break;
                 
-                case("Clay"):
-                    potManager.setSoil(new Soil("Clay"));
-                    break;
+    //            case("Clay"):
+    //                potManager.setSoil(new Soil("Clay"));
+    //                break;
                 
-            }
+    //        }
             
      
-        }
-    }
+    //    }
+    //}
 }

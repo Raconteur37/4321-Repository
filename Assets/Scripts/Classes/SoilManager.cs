@@ -4,16 +4,37 @@ using UnityEngine;
 
 public class SoilManager : MonoBehaviour
 {
-    [SerializeField] private Soil soil;
+    public Soil soil;
     // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter(Collider other)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.CompareTag("Pot"))
+        {
+            PotManager potManager = other.GetComponent<PotManager>();
+
+            switch (soil.getType())
+            {
+
+                case ("Sandy"):
+                    potManager.setSoil(new Soil("Sandy"));
+                    //Debug.Log("Triggered the event");
+                    break;
+
+                case ("Loam"):
+                    potManager.setSoil(new Soil("Loam"));
+                    break;
+
+                case ("Clay"):
+                    potManager.setSoil(new Soil("Clay"));
+                    break;
+
+            }
+
+            potManager.updateSoilGO();
+            gameObject.SetActive(false);
+
+
+        }
     }
 }

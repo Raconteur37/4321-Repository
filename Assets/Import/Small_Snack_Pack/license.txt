@@ -1,0 +1,11 @@
+Model Information:
+* title:	Small Snack Pack
+* source:	https://sketchfab.com/3d-models/small-snack-pack-213071ad6d384f8ab8fe003a5f95f9bd
+* author:	Jones Studio (https://sketchfab.com/jonestudio)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Small Snack Pack" (https://sketchfab.com/3d-models/small-snack-pack-213071ad6d384f8ab8fe003a5f95f9bd) by Jones Studio (https://sketchfab.com/jonestudio) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 662416654e3144dfab2a2c1ef5f5650f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 662416654e3144dfab2a2c1ef5f5650f,
         type: 3}
@@ -194,10 +194,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 662416654e3144dfab2a2c1ef5f5650f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5283574864628914719}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 662416654e3144dfab2a2c1ef5f5650f,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3823805400841025000}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 662416654e3144dfab2a2c1ef5f5650f,
         type: 3}
@@ -249,20 +245,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5283574864628914719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4811635493839956651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e4bd40ce4d74a87b809bef3186b938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterPot: {fileID: 0}
-  splashParticles: {fileID: 0}
 --- !u!198 &3823805400841025000
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5072,6 +5054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710b04d861f6749659346ea82b3f5b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
 --- !u!4 &5300046618493300753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 662416654e3144dfab2a2c1ef5f5650f,

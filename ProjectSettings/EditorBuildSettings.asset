@@ -23,8 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TwoPlayerTestingSceneBuildingBlock.unity
     guid: 357b15ea54500422c9ad03456fae982f
+  - enabled: 0
+    path: Assets/Scenes/VR_UI_Test.unity
+    guid: 96fa2f41b16ec5247979dbfdd567e399
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ae13653649f3e8b4084c97d089f2a8c7,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3f06aa39740d7814b99e4a28d3b7e1e3,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0f6ed39fc5cf24aa2a02043678edb655,
       type: 2}
