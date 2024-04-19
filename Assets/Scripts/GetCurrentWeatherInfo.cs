@@ -193,7 +193,6 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
             Debug.Log($"Humidity: {weatherData.KeyInfo.Humidity}");
             Debug.Log("Before");*/
-            Debug.Log("Before");
             foreach (var conditions in weatherData.WeatherConditions)
             {
                 //Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
