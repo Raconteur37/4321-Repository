@@ -13,7 +13,7 @@ public class EnterVR : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         //if vr player's hand touched the vr window
-        if (col.gameObject.name == "LeftHandModel" || col.gameObject.name == "RightHandModel")
+        if (col.gameObject.name == "Aloe_Grabbable_Pot")
         {
             //set back to vr
             oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.UserDefined;
