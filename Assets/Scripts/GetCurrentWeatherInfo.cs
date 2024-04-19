@@ -148,6 +148,10 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     public Text text;
 
+
+
+
+
     public void changeRainButton()
     {
         foreach(var conditions in weatherData.WeatherConditions)
@@ -177,25 +181,25 @@ public class GetCurrentWeatherInfo : MonoBehaviour
     void Update()
     {
 
-        if (phase == Ephase.Succeeded && !shownWeatherInfo)
+        if (phase == Ephase.Succeeded)
         {
             
             shownWeatherInfo = true;
 
             text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
 
-            Debug.Log($"Weather Data {weatherData.CityName}");
+            /*Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
             Debug.Log($"Humidity: {weatherData.KeyInfo.Humidity}");
-            Debug.Log("Before");
+            Debug.Log("Before");*/
             if (!weatherUI.gameObject.activeSelf)
             {
                 weatherUI.gameObject.SetActive(true);
             }
             TextMeshProUGUI[] texts = weatherUI.GetComponentsInChildren<TextMeshProUGUI>();
             Image[] images = weatherUI.GetComponentsInChildren<Image>();
-            Debug.Log("After");
-            Debug.Log($"Text Length {texts.Length}");
+            //Debug.Log("After");
+            //Debug.Log($"Text Length {texts.Length}");
             foreach (TextMeshProUGUI TMP in texts)
             {
                 Debug.Log(TMP.name);
@@ -255,11 +259,24 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             }
             foreach (var conditions in weatherData.WeatherConditions)
             {
-                Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
+                //Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
                 FindObjectOfType<Rain>().rainStatus(conditions.Group);
                 FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
             }
 
+
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Debug.Log("Y button on keyboard was pressed");
+            StartCoroutine(GetWeather_Stage1_PublicIP());
+            Debug.Log("updating weather api");
+        }
+        if (OVRInput.Get(OVRInput.Button.Four))
+        {
+            Debug.Log("Y button pressed");
+            StartCoroutine(GetWeather_Stage1_PublicIP());
+            Debug.Log("Y button pressed to updated weather api");
         }
     }
 
