@@ -9,31 +9,13 @@ using UnityEngine.XR;
 public class RainButtonController : MonoBehaviour
 {
 
-    public Button rainButton;
-    public InputAction playerControl;
-
-    /*private void OnEnable()
-    {
-        playerControl.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControl.Disable();
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {
-        Button btn = rainButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+
     }
 
-    public void TaskOnClick()
-    {
-        Debug.Log("rain button has been clicked");
-        FindObjectOfType<GetCurrentWeatherInfo>().changeRainButton();
-    }
+
 
     // Update is called once per frame
     void Update()

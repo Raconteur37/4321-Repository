@@ -149,9 +149,6 @@ public class GetCurrentWeatherInfo : MonoBehaviour
     public Text text;
 
 
-
-
-
     public void changeRainButton()
     {
         foreach(var conditions in weatherData.WeatherConditions)
@@ -166,8 +163,10 @@ public class GetCurrentWeatherInfo : MonoBehaviour
                 conditions.Group = "Rain";
                 Debug.Log("turning rain on");
             }
-            FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            //FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            //FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
         }
+        UpdateWeatherUI();
     }
 
 
@@ -175,30 +174,32 @@ public class GetCurrentWeatherInfo : MonoBehaviour
     void Start()
     {
         StartCoroutine(GetWeather_Stage1_PublicIP());
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (phase == Ephase.Succeeded && !shownWeatherInfo)
+        {
+            shownWeatherInfo = true;
+
+            UpdateWeatherUI();
+            Debug.Log("updating the weather ui for the first time");
+
+            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
+        }
+
         if (phase == Ephase.Succeeded)
         {
             
             shownWeatherInfo = true;
 
-            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
-
             /*Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
             Debug.Log($"Humidity: {weatherData.KeyInfo.Humidity}");
             Debug.Log("Before");*/
-            foreach (var conditions in weatherData.WeatherConditions)
-            {
-                //Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
-                FindObjectOfType<Rain>().rainStatus(conditions.Group);
-                FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
-            }
 
 
         }
@@ -206,12 +207,14 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         {
             Debug.Log("Y button on keyboard was pressed");
             StartCoroutine(GetWeather_Stage1_PublicIP());
+            UpdateWeatherUI();
             Debug.Log("updating weather api");
         }
         if (OVRInput.Get(OVRInput.Button.Four))
         {
             Debug.Log("Y button pressed");
             StartCoroutine(GetWeather_Stage1_PublicIP());
+            UpdateWeatherUI();
             Debug.Log("Y button pressed to updated weather api");
         }
     }
@@ -246,7 +249,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
             {
                 foreach (var conditions in weatherData.WeatherConditions)
                 {
-                    if (conditions.Group == "Cloud")
+                    if (conditions.Group == "Clouds")
                     {
                         TMP.text = "Cloudy";
                         foreach (Image temp in images)
@@ -279,8 +282,25 @@ public class GetCurrentWeatherInfo : MonoBehaviour
                             }
                         }
                     }
+                    else
+                    {
+                        TMP.text = "Cloudy";
+                        foreach (Image temp in images)
+                        {
+                            if (temp.name == "WeatherIcon")
+                            {
+                                temp.sprite = cloudy;
+                            }
+                        }
+                    }
                 }
             }
+        }
+        foreach (var conditions in weatherData.WeatherConditions)
+        {
+            //Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
+            FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
         }
     }
 
