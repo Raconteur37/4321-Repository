@@ -16,7 +16,7 @@ MonoBehaviour:
   allowOptional3DofHeadTracking: 0
   handTrackingSupport: 1
   handTrackingFrequency: 1
-  handTrackingVersion: 0
+  handTrackingVersion: 2
   multimodalHandsControllersSupport: 0
   anchorSupport: 0
   sharedAnchorSupport: 0

@@ -6,7 +6,7 @@ public class EnterPassthrough : MonoBehaviour
 {
     public OVRPassthroughLayer oVRPassthroughLayer;
     public GameObject greenHouse;
-    public GameObject passThrough;
+    public OVRPassthroughLayer passThrough;
     public GameObject cameraRig;
     public GameObject vrWindow;
 
@@ -15,8 +15,8 @@ public class EnterPassthrough : MonoBehaviour
     {
         if (col.gameObject.name == "Aloe_Grabbable_Pot")
         {
-            oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
-            oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Overlay;
+            //oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
+            //oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Overlay;
 
             //get player controller in camera rig
             cameraRig.GetComponent<CharacterController>().enabled = false;
@@ -25,7 +25,8 @@ public class EnterPassthrough : MonoBehaviour
             cameraRig.GetComponent<OVRPlayerController>().enabled = false;
 
             greenHouse.SetActive(false);
-            passThrough.SetActive(true);
+            passThrough.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
+            passThrough.overlayType = OVROverlay.OverlayType.Overlay;
             vrWindow.SetActive(true);
             gameObject.SetActive(false);
         }

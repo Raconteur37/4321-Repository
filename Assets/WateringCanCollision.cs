@@ -4,22 +4,44 @@ using UnityEngine;
 
 public class WateringCanCollision : MonoBehaviour
 {
+    public ParticleSystem particleSystem;
+    public AudioClip audioClip; // Assign your audio clip in the Inspector
+    private AudioSource audioSource;
 
-    private void OnCollisonEnter(Collision collision)
+    private void Start()
     {
-        if(collision.gameObject.name == "WateringCan_Grabbable")
+        // Initialize audio source
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.loop = true; // Set audio to loop
+
+        // Turn off the audio initially
+        audioSource.Stop();
+
+        // Turn off the particle system initially
+        if (particleSystem != null)
         {
-            // Activate the particle system
-            collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            particleSystem.Stop();
         }
     }
 
-    private void OnCollisonExit(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "WateringCan_Grabbable")
+        if (collision.CompareTag("Pot"))
         {
             // Activate the particle system
-            collision.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+            particleSystem.Play();
+            audioSource.Play();
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.CompareTag("Pot"))
+        {
+            // Activate the particle system
+            particleSystem.Stop();
+            audioSource.Stop();
         }
     }
 }

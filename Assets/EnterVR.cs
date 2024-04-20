@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnterVR : MonoBehaviour
 {
     public GameObject environment;
     public GameObject passthroughWindow;
     public OVRPassthroughLayer oVRPassthroughLayer;
-    public GameObject passThrough;
+    public OVRPassthroughLayer passThrough;
     public GameObject cameraRig;
+    public TextMeshProUGUI text;
 
     void OnCollisionEnter(Collision col)
     {
@@ -16,8 +19,8 @@ public class EnterVR : MonoBehaviour
         if (col.gameObject.name == "Aloe_Grabbable_Pot")
         {
             //set back to vr
-            oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.UserDefined;
-            oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Underlay;
+            //oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.UserDefined;
+            //oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Underlay;
 
             //enable greenhouse
             environment.SetActive(true);
@@ -28,8 +31,11 @@ public class EnterVR : MonoBehaviour
             //get OVR Player
             cameraRig.GetComponent<OVRPlayerController>().enabled = true;
 
+            //passthroughWindow.SetActive(true);
+            passThrough.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
+            passThrough.overlayType = OVROverlay.OverlayType.None;
+
             passthroughWindow.SetActive(true);
-            passThrough.SetActive(false);
             gameObject.SetActive(false);
         }
     }
