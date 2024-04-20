@@ -33,7 +33,7 @@ public class EnterVR : MonoBehaviour
 
             //passthroughWindow.SetActive(true);
             passThrough.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
-            passThrough.overlayType = OVROverlay.OverlayType.Underlay;
+            passThrough.overlayType = OVROverlay.OverlayType.None;
             passThrough.textureOpacity = 0.0f;
 
             passthroughWindow.SetActive(true);

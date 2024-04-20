@@ -1088,6 +1088,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass-block (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ceef9ef176e554d87ac23e874fafb989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6085,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1299729383
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6166,14 +6171,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299729382}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6826647, y: -0.015436121, z: -0.008344204, w: -0.7305211}
-  m_LocalPosition: {x: -0.067, y: 1.495, z: -0.619}
+  m_LocalRotation: {x: -0.6483193, y: -0.21436287, z: 0.20561422, w: -0.7010374}
+  m_LocalPosition: {x: -0.059, y: 1.443, z: -1.392}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 697014896}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -265.669, y: 206.711, z: 206.136}
+  m_LocalEulerAnglesHint: {x: -265.669, y: 206.711, z: 172.134}
 --- !u!114 &1299729387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6189,7 +6194,7 @@ MonoBehaviour:
   environment: {fileID: 501910343}
   passthroughWindow: {fileID: 1277498965}
   oVRPassthroughLayer: {fileID: 1108847476}
-  passThrough: {fileID: 2100386599}
+  passThrough: {fileID: 2100386600}
   cameraRig: {fileID: 1012657315272166779}
   text: {fileID: 886416000}
 --- !u!1 &1377024170
@@ -6353,6 +6358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass-block (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ceef9ef176e554d87ac23e874fafb989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7434,6 +7444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass-block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ceef9ef176e554d87ac23e874fafb989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8648,6 +8663,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass-block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ceef9ef176e554d87ac23e874fafb989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9314,6 +9334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass-block
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ceef9ef176e554d87ac23e874fafb989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

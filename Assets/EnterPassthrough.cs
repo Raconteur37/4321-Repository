@@ -28,6 +28,7 @@ public class EnterPassthrough : MonoBehaviour
             passThrough.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
             passThrough.overlayType = OVROverlay.OverlayType.Overlay;
             passThrough.textureOpacity = 1.0f;
+
             vrWindow.SetActive(true);
             gameObject.SetActive(false);
         }
