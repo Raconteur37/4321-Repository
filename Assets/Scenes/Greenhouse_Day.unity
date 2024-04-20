@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5927,14 +5927,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277498965}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.6728771, z: 0.7397544, w: 0}
-  m_LocalPosition: {x: 1.114, y: 1.628, z: -0.66}
+  m_LocalRotation: {x: -0.26781827, y: 0.62723094, z: 0.6895729, w: 0.24360645}
+  m_LocalPosition: {x: 1.889, y: 1.589, z: -1.252}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 393271363}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -95.421, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -95.421, y: 137.55, z: -0.0010070801}
 --- !u!114 &1277498970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,7 +5961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oVRPassthroughLayer: {fileID: 1108847476}
   greenHouse: {fileID: 501910343}
-  passThrough: {fileID: 2100386599}
+  passThrough: {fileID: 2100386600}
   cameraRig: {fileID: 1012657315272166779}
   vrWindow: {fileID: 1299729382}
 --- !u!1 &1284260237
@@ -9578,7 +9578,7 @@ MonoBehaviour:
   _lutWeight: 1
   _flipLutY: 1
   serializedSurfaceGeometry: []
-  textureOpacity_: 1
+  textureOpacity_: 0
   edgeRenderingEnabled_: 0
   edgeColor_: {r: 1, g: 1, b: 1, a: 1}
   colorMapType: 0
