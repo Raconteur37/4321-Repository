@@ -211,6 +211,7 @@ public class PotManager : MonoBehaviour
     public void setPlantGOFalse()
     {
         plantGO.SetActive(false);
+        AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
     }
 
     public void setSoilGOFalse()
@@ -363,6 +364,7 @@ public class PotManager : MonoBehaviour
                     }
                 }
             }
+            UpdateAlertUI();
         }
     }
 
