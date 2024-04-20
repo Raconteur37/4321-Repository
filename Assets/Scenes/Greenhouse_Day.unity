@@ -7482,7 +7482,7 @@ MonoBehaviour:
   centerEyeCamera: {fileID: 1657461774}
   handObject: {fileID: 1797800775}
   objectToActivate: {fileID: 1883056622}
-  distanceThreshold: 0.4
+  distanceThreshold: 0.35
 --- !u!114 &1657461779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7498,7 +7498,13 @@ MonoBehaviour:
   centerEyeCamera: {fileID: 1657461774}
   handObject: {fileID: 1797800775}
   objectToActivate: {fileID: 1883056622}
-  distanceThreshold: 0.5
+  distanceThreshold: 0.4
+--- !u!20 &1657461781 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6382749277873115620, guid: d93ca89200a2b4563862dd3ecc565d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1012657315272166778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1663730539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8775,6 +8781,7 @@ GameObject:
   - component: {fileID: 1883056625}
   - component: {fileID: 1883056624}
   - component: {fileID: 1883056623}
+  - component: {fileID: 1883056627}
   m_Layer: 5
   m_Name: Hand Wrist Poke Menu
   m_TagString: Untagged
@@ -8853,7 +8860,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883056622}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0292}
+  m_LocalPosition: {x: 0, y: 0, z: -0.002}
   m_LocalScale: {x: 0.0004, y: 0.0004, z: 0.0004}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8862,9 +8869,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.2612}
+  m_AnchoredPosition: {x: 0.117, y: 0.156}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1883056627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883056622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f22f3fd08d4fe142b8735503c3fa0eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToFollow: {fileID: 1657461781}
+  gameObjectToRotate: {fileID: 1883056626}
 --- !u!1 &1886949426
 GameObject:
   m_ObjectHideFlags: 0
