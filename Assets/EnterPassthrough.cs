@@ -27,6 +27,8 @@ public class EnterPassthrough : MonoBehaviour
             greenHouse.SetActive(false);
             passThrough.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
             passThrough.overlayType = OVROverlay.OverlayType.Overlay;
+            passThrough.textureOpacity = 1.0f;
+
             vrWindow.SetActive(true);
             gameObject.SetActive(false);
         }

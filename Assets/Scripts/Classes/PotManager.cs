@@ -4,6 +4,7 @@ using Classes.Plants;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PotManager : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Canvas plantstatsUI;
 
     [SerializeField] private Canvas plantstatsUI1;
-    
+    [SerializeField] private Image AlertIcon;
+    [SerializeField] private Sprite Check;
+    [SerializeField] private Sprite NotCheck;
+    [SerializeField] private Image AlertTextBackground;
+    [SerializeField] private TextMeshProUGUI AlertText;
+
     [SerializeField] private Soil soil;
     private PlantClass plant;
     
@@ -51,17 +57,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        //plant = new AloeVera(); // For now
-        //soil = new Soil("Sandy"); // Temp
+        plant = new AloeVera(); // For now
+        soil = new Soil("Sandy"); // Temp
         
         if (soilGO != null)
         {
-            soilGO.SetActive(false);
+            soilGO.SetActive(true);
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(false);
+            plantGO.SetActive(true);
         }
         
 
@@ -96,6 +102,82 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+    private void UpdateAlertUI()
+    {
+        if (plant != null)
+        {
+            Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
+            bool water = false;
+            bool sun = true;
+            foreach (Slider slider in sliders)
+            {
+                if (slider.name == "WaterSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double waterAmount = plant.getWaterAmount();
+                        float waterAmountFloat = (float)waterAmount;
+                        float maxWaterRange = statsUI.getMax();
+                        float minWaterRange = statsUI.getMin();
+                        float currentWaterAmount = statsUI.getSliderValue();
+                        if (currentWaterAmount < minWaterRange || currentWaterAmount > maxWaterRange)
+                        {
+                            water = false;
+                        }
+                        else
+                        {
+                            water = true;
+                        }
+                    }
+                }
+                else if (slider.name == "SunlightSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double sunlightAmount = plant.getSunlightAmount();
+                        float sunlightAmountFloat = (float)sunlightAmount;
+                        float maxSunlightRange = statsUI.getMax();
+                        float minSunlightRange = statsUI.getMin();
+                        float currentSunlightAmount = statsUI.getSliderValue();
+                        if (currentSunlightAmount < minSunlightRange || currentSunlightAmount > maxSunlightRange)
+                        {
+                            sun = false;
+                        }
+                        else
+                        {
+                            sun = true;
+                        }
+                    }
+                }
+            }
+            if (sun && water)
+            {
+                AlertIcon.sprite = Check;
+                AlertText.text = "Your Plant is Healthy!";
+            }
+            else if(sun && !water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Water Levels!";
+            }
+            else if(!sun && water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Light Levels!";
+            }
+            else if(!sun && !water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Water and Light Levels!";
+            }
+        }
+    }
+    public void ViewAlertText()
+    {
+        AlertTextBackground.gameObject.SetActive(!AlertTextBackground.gameObject.activeSelf);
+    }
 
     public PlantClass getPlant()
     {
@@ -129,6 +211,7 @@ public class PotManager : MonoBehaviour
     public void setPlantGOFalse()
     {
         plantGO.SetActive(false);
+        AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
     }
 
     public void setSoilGOFalse()
@@ -149,6 +232,7 @@ public class PotManager : MonoBehaviour
                 plant.updatePlant();
 
                 updatePlantStatsUI();
+                UpdateAlertUI();
 
                 //plant.toString();
 
@@ -190,6 +274,7 @@ public class PotManager : MonoBehaviour
     }
     public void VRUISelect()
     {
+        Debug.Log("Selector");
         Vector3 uiPosition = transform.position + offset;
         plantstatsUI.transform.position = uiPosition;
         plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
@@ -237,12 +322,7 @@ public class PotManager : MonoBehaviour
         if (plant != null)
         {
             updatePlantGO();
-            if(plant.getPlantName() == "Aloe Vera")
-            {
-                //set plant mesh to aloe vera and so on
-                MeshFilter plantMesh = getPlantGO().GetComponent<MeshFilter>();
-                plantMesh.mesh = Resources.Load<Mesh>("Assets/Import/House_Plants/meshes/basil.asset");
-            }
+            AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
@@ -284,6 +364,7 @@ public class PotManager : MonoBehaviour
                     }
                 }
             }
+            UpdateAlertUI();
         }
     }
 
