@@ -265,7 +265,10 @@ namespace Classes.Plants
     {
         return healthString;
     }
-
+    public string getPlantName()
+        {
+            return plantName;
+        }
     public void isPlantInSun(bool sun)
     {
         hasSunlight = sun;

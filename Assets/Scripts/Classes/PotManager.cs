@@ -51,17 +51,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        plant = new AloeVera(); // For now
-        soil = new Soil("Sandy"); // Temp
+        //plant = new AloeVera(); // For now
+        //soil = new Soil("Sandy"); // Temp
         
         if (soilGO != null)
         {
-            soilGO.SetActive(true);
+            soilGO.SetActive(false);
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(true);
+            plantGO.SetActive(false);
         }
         
 
@@ -190,7 +190,6 @@ public class PotManager : MonoBehaviour
     }
     public void VRUISelect()
     {
-        Debug.Log("Selector");
         Vector3 uiPosition = transform.position + offset;
         plantstatsUI.transform.position = uiPosition;
         plantstatsUI.gameObject.SetActive(!plantstatsUI.gameObject.activeSelf);
@@ -238,6 +237,12 @@ public class PotManager : MonoBehaviour
         if (plant != null)
         {
             updatePlantGO();
+            if(plant.getPlantName() == "Aloe Vera")
+            {
+                //set plant mesh to aloe vera and so on
+                MeshFilter plantMesh = getPlantGO().GetComponent<MeshFilter>();
+                plantMesh.mesh = Resources.Load<Mesh>("Assets/Import/House_Plants/meshes/basil.asset");
+            }
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
