@@ -231,7 +231,7 @@ namespace Classes.Plants
         sunlightAmount = amount;
     }
 
-    public void setWaterAmount(int amount)
+    public void setWaterAmount(double amount) // previous was an int, but waterAmount is a double
     {
         waterAmount = amount;
     }

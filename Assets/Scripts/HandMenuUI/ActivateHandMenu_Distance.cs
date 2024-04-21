@@ -24,19 +24,19 @@ public class ActivateHandMenu_Distance : MonoBehaviour
         float distance = Vector3.Distance(centerEyeCamera.position, handObject.transform.position);
 
         // Debug to find correct distance
-        Debug.Log("Distance to Hand: " + distance);
+        //Debug.Log("Distance to Hand: " + distance);
 
         // check if distance is less than or equal to threshold
         if (distance < distanceThreshold)
         {
-            Debug.Log("Activate hand menu - hand is less than threshold.");
+            //Debug.Log("Activate hand menu - hand is less than threshold.");
 
             objectToActivate.SetActive(true);
         }
         else
         {
             // Debug to find correct distance
-            Debug.Log("Hand is out of range - greater than threshold");
+            //Debug.Log("Hand is out of range - greater than threshold");
         }
         
     }
