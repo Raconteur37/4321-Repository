@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1868,6 +1868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4255764687398801728, guid: 61e527d154bad4e188660fdf903d3b09,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -2260,6 +2265,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1269929823}
+    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpawnPrefabPot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6499969712556704338, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
@@ -5216,6 +5241,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1261883085}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1269929822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6499969712556704338, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+    type: 3}
+  m_PrefabInstance: {fileID: 613327466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1269929823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3545836438698229850, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+    type: 3}
+  m_PrefabInstance: {fileID: 613327466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269929822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bad5c4b5f10804cbdde241630ae243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1277498965
 GameObject:
   m_ObjectHideFlags: 0
@@ -6764,7 +6807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerEyeCamera: {fileID: 1657461774}
   handObject: {fileID: 1797800775}
-  objectToActivate: {fileID: 0}
+  objectToActivate: {fileID: 1269929822}
   distanceThreshold: 0.35
 --- !u!114 &1657461779
 MonoBehaviour:
@@ -6780,7 +6823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerEyeCamera: {fileID: 1657461774}
   handObject: {fileID: 1797800775}
-  objectToActivate: {fileID: 0}
+  objectToActivate: {fileID: 1269929822}
   distanceThreshold: 0.4
 --- !u!20 &1657461781 stripped
 Camera:
