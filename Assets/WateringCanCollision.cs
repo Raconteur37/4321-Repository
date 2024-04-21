@@ -44,12 +44,16 @@ public class WateringCanCollision : MonoBehaviour
             PotManager potManager = collision.GetComponent<PotManager>();
 
             PlantClass plant = potManager.getPlant();
+            if (plant.getWaterAmount() < 100)
+            {
 
-            double currentPlantWater = plant.getWaterAmount() + 0.1;
+                double currentPlantWater = plant.getWaterAmount() + 0.05;
 
-            Debug.Log("Current water lever for plant: " + currentPlantWater);
+                Debug.Log("Current water lever for plant: " + currentPlantWater);
 
-            plant.setWaterAmount(currentPlantWater);
+                plant.setWaterAmount(currentPlantWater);
+                potManager.updatePlantStatsUI();
+            }
 
     }
 

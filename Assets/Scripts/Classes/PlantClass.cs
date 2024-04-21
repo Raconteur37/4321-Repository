@@ -226,7 +226,7 @@ namespace Classes.Plants
     {
         return waterMaxRange;
     }
-    public void setSunlightAmount(int amount)
+    public void setSunlightAmount(double amount)
     {
         sunlightAmount = amount;
     }

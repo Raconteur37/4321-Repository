@@ -72,7 +72,7 @@ public class PotManager : MonoBehaviour
         
 
     }
-    private void updatePlantStatsUI()
+    public void updatePlantStatsUI()
     {
         if (plant != null)
         {
