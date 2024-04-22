@@ -10,6 +10,8 @@ public class LightController : MonoBehaviour
     void Start()
     {
         
+        GetComponent<BoxCollider>().enabled = false;
+        
         spotLight.enabled = false;
     }
 
@@ -20,6 +22,9 @@ public class LightController : MonoBehaviour
             isLightOn = !isLightOn;
 
             spotLight.enabled = isLightOn;
+            
+            GetComponent<BoxCollider>().enabled = true;
+            
         }
     }
 }

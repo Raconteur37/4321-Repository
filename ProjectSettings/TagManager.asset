@@ -11,6 +11,7 @@ TagManager:
   - Greenhouse
   - GreenhouseBoundary
   - Hand
+  - Lamp
   layers:
   - Default
   - TransparentFX

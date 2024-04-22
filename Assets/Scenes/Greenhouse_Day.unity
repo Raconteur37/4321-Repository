@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.007848639, g: 0.029300665, b: 0.15382016, a: 1}
+  m_IndirectSpecularColor: {r: 0.3520953, g: 0.72411317, b: 0.95809513, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1921,6 +1921,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lamp
+      objectReference: {fileID: 0}
     - target: {fileID: 4255764687398801728, guid: 61e527d154bad4e188660fdf903d3b09,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -1940,6 +1945,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 511837939}
+    - targetCorrespondingSourceObject: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511837944}
   m_SourcePrefab: {fileID: 100100000, guid: 61e527d154bad4e188660fdf903d3b09, type: 3}
 --- !u!1 &511837938 stripped
 GameObject:
@@ -1966,6 +1975,27 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 511837937}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &511837944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511837938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 110.44028, y: 78.03052, z: 133.6753}
+  m_Center: {x: -19.930658, y: 96.88386, z: 9.685758}
 --- !u!1 &522761159
 GameObject:
   m_ObjectHideFlags: 0
@@ -9432,7 +9462,7 @@ PrefabInstance:
     - target: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}
       propertyPath: m_Name
-      value: Aloe_Grabbable_Pot
+      value: Pot
       objectReference: {fileID: 0}
     - target: {fileID: 5829153618760200240, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}

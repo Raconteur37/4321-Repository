@@ -246,6 +246,11 @@ namespace Classes.Plants
         
     }
 
+    public bool plantIsInSun()
+    {
+        return hasSunlight;
+    }
+
     public void setPerferedSoil(string name)
     {
         perferedSoil = name;

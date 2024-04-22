@@ -58,17 +58,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        plant = new AloeVera(); // For now
-        soil = new Soil("Sandy"); // Temp
+        plant = new AloeVera(); // For now // This too
+        soil = new Soil("Sandy"); // Temp, comment out when ready
         
         if (soilGO != null)
         {
-            soilGO.SetActive(true);
+            soilGO.SetActive(true); // Change to false when ready
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(true);
+            plantGO.SetActive(true); // False when ready
         }
         
 
@@ -175,6 +175,19 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+    
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Lamp"))
+        {
+            if (!plant.plantIsInSun())
+            {
+                plant.isPlantInSun(true);
+            }
+        }
+    }
+    
     public void ViewAlertText()
     {
         AlertTextBackground.gameObject.SetActive(!AlertTextBackground.gameObject.activeSelf);
