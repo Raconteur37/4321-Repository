@@ -5,7 +5,7 @@ using Normal.Realtime;
 
 public class ScalePlant : MonoBehaviour
 {
-    private RealtimeTransform realtimeTransform;
+    public RealtimeTransform realtimeTransform;
     private float scale = 0.1f;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,12 @@ public class ScalePlant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Passed in?
+        if (realtimeTransform == null) { return; }
+
+        realtimeTransform.RequestOwnership();
         transform.localScale = new Vector3(scale, scale, scale);
-        scale += 0.0001f;
+        scale += 0.001f;
+        realtimeTransform.ClearOwnership();
     }
 }
