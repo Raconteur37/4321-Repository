@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f7f095c4f042e4a28e571e63ce05df, type: 3}
   m_Name: Clay Soil
   m_EditorClassIdentifier: 
-  type: Sandy
+  type: Clay
   status: Moist
