@@ -338,6 +338,11 @@ public class PotManager : MonoBehaviour
     {
         this.soil = soil;
         updateSoilGO();
+        if (soil.getType() == "Sandy")
+        {
+            Renderer currentM = soilGO.GetComponent<Renderer>();
+            Material sandMaterial = Resources.Load<Material>("Sand Material");
+        }
     }
 
     public void setPlant(PlantClass plant)
@@ -348,9 +353,12 @@ public class PotManager : MonoBehaviour
         {
 
             updatePlantGO();
-            MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
-            Mesh aloeMesh = Resources.Load<Mesh>("basil");
-            plantFilter.mesh = aloeMesh;
+            if(plant.getPlantName() == "Basil")
+            {
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh basilMesh = Resources.Load<Mesh>("basil");
+                plantFilter.mesh = basilMesh;
+            }
 
             AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
