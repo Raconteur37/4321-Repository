@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3520953, g: 0.72411317, b: 0.95809513, a: 1}
+  m_IndirectSpecularColor: {r: 0.35232037, g: 0.7242681, b: 0.95768297, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1688,7 +1688,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -682534419
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &418591035
@@ -2369,10 +2369,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 732568459758413607, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -682534419
+      objectReference: {fileID: 0}
+    - target: {fileID: 805663759941636629, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 9f0921df-871b-465e-ad49-ecb3e7e5e4dd
+      objectReference: {fileID: 0}
     - target: {fileID: 992113189457641572, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422059079361552829, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 21b4a38a-aecd-4d71-930e-465324a22e25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507506322499536165, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: efb8e024-2936-4780-b931-737ba911c1c1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873796275630645462, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 72cef1c0-01cb-4485-92db-442993066c7a
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120251006701881646, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 85a08c0a-60c6-43ca-ba4e-7df226b07ad2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975718519787020536, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359895702719263445, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 4349e0be-3400-43a7-b284-b29c752cc8ca
       objectReference: {fileID: 0}
     - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
@@ -2393,6 +2433,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421538662173262076, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 0213848b-431f-4c18-a4e7-b941f4887a3c
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429574289829970803, guid: 65c82c3df1fdecd4a85d7dddf948266e,
+        type: 3}
+      propertyPath: instanceId
+      value: 7192d9a2-f0dc-4793-8889-51f790ff1c14
       objectReference: {fileID: 0}
     - target: {fileID: 6499969712556704338, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
@@ -2960,7 +3010,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -682534419
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &709027583
@@ -9459,6 +9509,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5114531467557623620, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -682534419
+      objectReference: {fileID: 0}
     - target: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}
       propertyPath: m_Name
@@ -9524,6 +9579,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8877373062765321277, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -682534419
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936244811925811726, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -682534419
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9537,6 +9602,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469635963958086146, guid: 25f705a988beaa846a01e88fb0cdde35,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -682534419
+      objectReference: {fileID: 0}
     - target: {fileID: 469635963958086146, guid: 25f705a988beaa846a01e88fb0cdde35,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
