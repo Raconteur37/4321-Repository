@@ -482,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 5549161310068178659, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}
       propertyPath: m_Name
-      value: Aloe_Grabbable_Pot 1
+      value: Pot
       objectReference: {fileID: 0}
     - target: {fileID: 6676268502969212130, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}
@@ -542,7 +542,7 @@ PrefabInstance:
     - target: {fileID: 9183048725869272065, guid: 71d1fd243ea9d37448b181ff6e2c43c7,
         type: 3}
       propertyPath: updateTime
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -634,6 +634,50 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1215525180}
   m_SourcePrefab: {fileID: 100100000, guid: ba31ca76873cf0244ad73845d0098795, type: 3}
+--- !u!1 &1152710022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152710024}
+  - component: {fileID: 1152710023}
+  m_Layer: 0
+  m_Name: ControllerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1152710023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152710022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9838ac6b66801a24d9ac5fd6c8fb6c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1152710024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152710022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29224545, y: -4.8392587, z: 20.0757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215525179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba31ca76873cf0244ad73845d0098795,
@@ -652,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e554ef27aacb04647b3385546948789e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soil: {fileID: 0}
 --- !u!54 &1215525181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -860,3 +905,4 @@ SceneRoots:
   - {fileID: 621859391}
   - {fileID: 293737528}
   - {fileID: 412225564}
+  - {fileID: 1152710024}

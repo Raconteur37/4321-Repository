@@ -222,32 +222,28 @@ public class PotManager : MonoBehaviour
     private void Update()
     {
         
+        if (OVRInput.Get(OVRInput.Button.Two)) // Shoot forward in time
+        {
+            //Debug.Log("B button pressed");
+            updatePlantAndScale();
+            resetTimer();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.B)) // Still forward by 1 update
+        {
+            //Debug.Log("B key pressed");
+            updatePlantAndScale();
+            resetTimer();
+        }
+        
         if (tempUpdateCounter <= 0f)  
         {
             if (plant != null && !plant.getIsFullyGrown())
             {
 
-                //Debug.Log("Called update in pot manager");
+                updatePlantAndScale();
 
-                plant.updatePlant();
-
-                updatePlantStatsUI();
-                UpdateAlertUI();
-
-                //plant.toString();
-
-                double status = plant.getStatus();
-
-                //Debug.Log(status);
-
-                xPlantScale = (float)status;
-                yPlantScale = (float)status;
-                zPlantScale = (float)status;
-                
-                plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
-                
-
-                tempUpdateCounter = updateTime; //reset the timer or cd
+                resetTimer();
             }
         }
         
@@ -272,6 +268,34 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+
+    public void updatePlantAndScale()
+    {
+        //Debug.Log("Called update in pot manager");
+
+        plant.updatePlant();
+
+        updatePlantStatsUI();
+        UpdateAlertUI();
+
+        //plant.toString();
+
+        double status = plant.getStatus();
+
+        //Debug.Log(status);
+
+        xPlantScale = (float)status;
+        yPlantScale = (float)status;
+        zPlantScale = (float)status;
+                
+        plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
+    }
+
+    public void resetTimer()
+    {
+        tempUpdateCounter = updateTime; //reset the timer or cd
+    }
+    
     public void VRUISelect()
     {
         Debug.Log("Selector");
