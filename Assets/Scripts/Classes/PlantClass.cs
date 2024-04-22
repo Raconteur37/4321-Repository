@@ -246,6 +246,16 @@ namespace Classes.Plants
         
     }
 
+    public void setDescription(string description)
+    {
+        this.description = description;
+    }
+
+    public string getDescription()
+    {
+        return description;
+    }
+
     public bool plantIsInSun()
     {
         return hasSunlight;
