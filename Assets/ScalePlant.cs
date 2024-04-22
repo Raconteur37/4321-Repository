@@ -10,18 +10,22 @@ public class ScalePlant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Start the coroutine
+        StartCoroutine(ScaleCubeCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Passed in?
-        if (realtimeTransform == null) { return; }
+    // Define the scaling factor
+    public float scaleIncreaseAmount = 0.1f;
 
-        realtimeTransform.RequestOwnership();
-        transform.localScale = new Vector3(scale, scale, scale);
-        scale += 0.001f;
-        realtimeTransform.ClearOwnership();
+    IEnumerator ScaleCubeCoroutine()
+    {
+        while (true)
+        {
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(5f);
+            realtimeTransform.RequestOwnership();
+            // Increase the scale of the cube
+            transform.localScale += new Vector3(scaleIncreaseAmount, scaleIncreaseAmount, scaleIncreaseAmount);
+        }
     }
 }
