@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using TMPro;
+using System;
 public class GetCurrentWeatherInfo : MonoBehaviour
 {
     const string URL_GetPublicIP = "https://api.ipify.org/";
@@ -99,8 +100,8 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     public class OpenWeather_Rain
     {
-        [JsonProperty("1h")] public int VolumeInLastHour { get; set; }
-        [JsonProperty("3h")] public int VolumeInLast3Hours { get; set; }
+        [JsonProperty("1h")] public float VolumeInLastHour { get; set; }
+        [JsonProperty("3h")] public float VolumeInLast3Hours { get; set; }
     }
 
     public class OpenWeather_Snow
@@ -298,10 +299,11 @@ public class GetCurrentWeatherInfo : MonoBehaviour
         }
         foreach (var conditions in weatherData.WeatherConditions)
         {
-            //Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
+            Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
             FindObjectOfType<Rain>().rainStatus(conditions.Group);
             FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
         }
+        FindAnyObjectByType<TimeManager>().updateTime();
     }
 
     IEnumerator GetWeather_Stage1_PublicIP()
