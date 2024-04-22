@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes.Plants;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,14 +24,18 @@ public class RainButtonController : MonoBehaviour
     {
         if (OVRInput.Get(OVRInput.Button.Three))
         {
-            Debug.Log("X button pressed");
+            //Debug.Log("X button pressed");
             FindAnyObjectByType<GetCurrentWeatherInfo>().changeRainButton();
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("X button on keyboard was pressed");
+            //Debug.Log("X button on keyboard was pressed");
             FindAnyObjectByType<GetCurrentWeatherInfo>().changeRainButton();
         }
+        
+        
+        
+        
     }
 }
