@@ -2369,90 +2369,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 732568459758413607, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -682534419
-      objectReference: {fileID: 0}
-    - target: {fileID: 805663759941636629, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 9f0921df-871b-465e-ad49-ecb3e7e5e4dd
-      objectReference: {fileID: 0}
     - target: {fileID: 992113189457641572, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1422059079361552829, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 21b4a38a-aecd-4d71-930e-465324a22e25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1507506322499536165, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: efb8e024-2936-4780-b931-737ba911c1c1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2873796275630645462, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 72cef1c0-01cb-4485-92db-442993066c7a
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120251006701881646, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 85a08c0a-60c6-43ca-ba4e-7df226b07ad2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3975718519787020536, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4359895702719263445, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 4349e0be-3400-43a7-b284-b29c752cc8ca
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1269929823}
-    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SpawnObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SpawnPrefabPot, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750327611394876506, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6421538662173262076, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 0213848b-431f-4c18-a4e7-b941f4887a3c
-      objectReference: {fileID: 0}
-    - target: {fileID: 6429574289829970803, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: instanceId
-      value: 7192d9a2-f0dc-4793-8889-51f790ff1c14
-      objectReference: {fileID: 0}
     - target: {fileID: 6499969712556704338, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
       propertyPath: m_Name
       value: Hand Wrist Poke Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6499969712556704338, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940183193510743993, guid: 65c82c3df1fdecd4a85d7dddf948266e,
         type: 3}
@@ -5476,18 +5401,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 613327466}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1269929823 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3545836438698229850, guid: 65c82c3df1fdecd4a85d7dddf948266e,
-    type: 3}
-  m_PrefabInstance: {fileID: 613327466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269929822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bad5c4b5f10804cbdde241630ae243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1277498965
 GameObject:
   m_ObjectHideFlags: 0
