@@ -9,7 +9,7 @@ public class SpawnPrefabPot : MonoBehaviour
     // Method to instantiate the prefab
     public void SpawnObject()
     {
-        if (prefabToSpawn != null)
+        if (prefabToSpawn != null && WristMenuTransform != null)
         {
             // Increment the current height
             currentHeight += spawnHeight;
@@ -22,7 +22,7 @@ public class SpawnPrefabPot : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Prefab to spawn is not assigned.");
+            Debug.LogError("Prefab to spawn or wrist menu transform is not assigned.");
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoilManager : MonoBehaviour
 {
-    [SerializeField] private Soil soil;
+    public Soil soil;
     // Start is called before the first frame update
     public void OnTriggerEnter(Collider other)
     {

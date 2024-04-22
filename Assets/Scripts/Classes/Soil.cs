@@ -4,9 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Soil
+[CreateAssetMenu(fileName = "New Soil", menuName = "Soil")]
+
+public class Soil : ScriptableObject
 {
-    private string type, status = "Moist"; // The type of soil, Sandy, Loam, or Clay as well as the status of the soil, Dry or Moist.
+    [SerializeField] string type, status = "Moist"; // The type of soil, Sandy, Loam, or Clay as well as the status of the soil, Dry or Moist.
     
     public Soil(string type)
     {
