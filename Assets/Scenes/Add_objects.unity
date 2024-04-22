@@ -920,6 +920,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 8394519243746676659, guid: 8df53fcb930797048abd096327279239,
     type: 3}
+  prefab_Soil: {fileID: 0}
+  prefab_Seed: {fileID: 0}
+  prefab_Watering_Can: {fileID: 0}
+  prefab_Shovel: {fileID: 0}
+  WristMenuTransform: {fileID: 0}
+  offsetFromWristMenu: {x: 0, y: 0.1, z: 0}
 --- !u!1 &301990380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,7 +2623,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1946475376}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
