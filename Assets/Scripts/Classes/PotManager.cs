@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class PotManager : MonoBehaviour
 {
@@ -345,7 +346,12 @@ public class PotManager : MonoBehaviour
         Debug.Log("it's set");
         if (plant != null)
         {
+
             updatePlantGO();
+            MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+            Mesh aloeMesh = Resources.Load<Mesh>("basil");
+            plantFilter.mesh = aloeMesh;
+
             AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
