@@ -123,6 +123,129 @@ namespace Classes.Plants
         
         }
 
+
+    public void reversePlantUpdate()
+    {
+     
+        healthString = "";
+
+        if (!isFullyGrown && !isDead)
+        {
+            
+            if (waterAmount >= waterMinRange)
+            {
+                if (waterAmount <= waterMaxRange)
+                {
+
+                    if (sunlightAmount >= sunlightMinRange)
+                    {
+
+                        if (sunlightAmount <= sunlightMaxRange)
+                        {
+
+                            isGrowing = true;
+                            healthString = "Healthy";
+                            isWaterWilting = false;
+                            isSunWilting = false;
+
+                            status += .02;
+
+                            if (isInPerferedSoil)
+                            {
+                                status += .01;
+                            }
+
+                            if (status >= statusCap)
+                            {
+                                isFullyGrown = true;
+                            }
+
+                        }
+                        else
+                        {
+                            healthString += "Too much light! \n";
+                            isGrowing = false;
+                            isSunWilting = true;
+                            status -= .005;
+                            //state += "Drying out \n";
+                        }
+                    }
+                    else
+                    {
+                        healthString += "Needs more light! \n";
+                        isGrowing = false;
+                        if (sunlightAmount < sunlightDecayThresh)
+                        {
+                            status -= .01;
+                            isSunWilting = true;
+                        }
+                    }
+                }
+                else
+                {
+                    healthString += "Too much water! \n";
+                    isWaterWilting = true;
+                    status -= .005;
+                    isGrowing = false;
+                }
+            }
+            else
+            {
+                healthString += "Needs more water! \n";
+                isGrowing = false;
+                if (waterAmount < waterDecayThresh)
+                {
+                    status -= .01;
+                    isWaterWilting = true;
+                }
+            }
+
+            double sunAmountDrain = Math.Round(1.0 * sunlightDrainMultiplier, 2);
+            double waterAmountDrain = Math.Round(1.0 * waterDrainMultiplier, 2);
+            
+
+            if (hasSunlight)
+            {
+                sunlightAmount += sunAmountDrain;
+            }
+            else
+            {
+                sunlightAmount -= sunAmountDrain;
+            }
+
+            waterAmount -= waterAmountDrain;
+
+            if (status <= 0)
+            {
+                isDead = true;
+            }
+            
+        } else
+        {
+            double sunAmountDrain = Math.Round(1.0 * sunlightDrainMultiplier, 2);
+            double waterAmountDrain = Math.Round(1.0 * waterDrainMultiplier, 2);
+            
+            if (isDead)
+            {
+                isDead = false;
+                sunlightAmount += sunAmountDrain;
+                waterAmount += waterAmountDrain;
+
+            }
+            else
+            {
+                if (isFullyGrown)
+                {
+                    isFullyGrown = false;
+                    
+                }
+            }
+        }
+        
+        
+        
+    }
+
     public void setPerferedSoil(string name)
     {
         perferedSoil = name;
@@ -226,12 +349,12 @@ namespace Classes.Plants
     {
         return waterMaxRange;
     }
-    public void setSunlightAmount(int amount)
+    public void setSunlightAmount(double amount)
     {
         sunlightAmount = amount;
     }
 
-    public void setWaterAmount(int amount)
+    public void setWaterAmount(double amount) // previous was an int, but waterAmount is a double
     {
         waterAmount = amount;
     }
@@ -265,7 +388,10 @@ namespace Classes.Plants
     {
         return healthString;
     }
-
+    public string getPlantName()
+        {
+            return plantName;
+        }
     public void isPlantInSun(bool sun)
     {
         hasSunlight = sun;
