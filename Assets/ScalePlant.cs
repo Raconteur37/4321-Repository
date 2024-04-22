@@ -17,6 +17,6 @@ public class ScalePlant : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(scale, scale, scale);
-        scale += 0.01f;
+        scale += 0.0001f;
     }
 }

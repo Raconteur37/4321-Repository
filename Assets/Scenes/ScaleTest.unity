@@ -598,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553062648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4194e31932a71426ebf63c9fb40df696, type: 3}
   m_Name: 
@@ -2635,7 +2635,7 @@ MonoBehaviour:
   _obsoleteAppKey: 
   _normcoreAppSettings: {fileID: 11400000, guid: 73a1a2b1e1bfa495d84d4fa324b9a1cf,
     type: 2}
-  _joinRoomOnStart: 0
+  _joinRoomOnStart: 1
   _roomToJoinOnStart: Scale
   _roomServerConfigurationToJoinOnStart: 
 --- !u!114 &114568986734098941
