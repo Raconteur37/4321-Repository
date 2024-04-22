@@ -7,8 +7,7 @@ using UnityEngine.UIElements;
 public class Stopwatch : RealtimeComponent<StopwatchModel>
 {
     public Transform cube;
-    private float scale = 0.1f;
-
+  
     public float time
     {
         get
@@ -30,8 +29,9 @@ public class Stopwatch : RealtimeComponent<StopwatchModel>
         if ( time % 2 == 0)
         {
             Debug.Log(time);
-            scale += 0.0001f;
-            cube.transform.localScale = new Vector3(scale, scale, scale);
+            Vector3 scale = cube.transform.localScale;
+            scale += new Vector3(0.0001f, 0.0001f, 0.0001f);
+            cube.transform.localScale = scale;
         }
     }
 
