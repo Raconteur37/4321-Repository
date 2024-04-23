@@ -105,7 +105,7 @@ namespace Classes.Plants
 
             if (hasSunlight)
             {
-                sunlightAmount += sunAmountDrain;
+                sunlightAmount += .3;
             }
             else
             {

@@ -62,17 +62,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        plant = new AloeVera(); // For now // This too
-        soil = new Soil("Sandy"); // Temp, comment out when ready
+        //plant = new AloeVera(); // For now // This too
+        //soil = new Soil("Sandy"); // Temp, comment out when ready
         
         if (soilGO != null)
         {
-            soilGO.SetActive(true); // Change to false when ready
+            soilGO.SetActive(false); // Change to false when ready
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(true); // False when ready
+            plantGO.SetActive(false); // False when ready
         }
         
 
