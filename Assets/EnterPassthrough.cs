@@ -13,7 +13,8 @@ public class EnterPassthrough : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Aloe_Grabbable_Pot")
+        //if (col.gameObject.name == "Aloe_Grabbable_Pot")
+        if (col.collider.CompareTag("Pot"))
         {
             //oVRPassthroughLayer.projectionSurfaceType = OVRPassthroughLayer.ProjectionSurfaceType.Reconstructed;
             //oVRPassthroughLayer.overlayType = OVROverlay.OverlayType.Overlay;

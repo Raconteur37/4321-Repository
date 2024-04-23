@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor;
+using Normal.Realtime;
+
 
 public class PotManager : MonoBehaviour
 {
@@ -35,7 +37,9 @@ public class PotManager : MonoBehaviour
     private float xPlantScale = 0.0f;
     private float yPlantScale = 0.0f;
     private float zPlantScale = 0.0f;
-    
+
+    public RealtimeView rtView;
+
     public void getSunStatus(string status)
     {
         if (status == "Clear")
@@ -301,7 +305,8 @@ public class PotManager : MonoBehaviour
         xPlantScale = (float)status;
         yPlantScale = (float)status;
         zPlantScale = (float)status;
-                
+
+        rtView.RequestOwnershipOfSelfAndChildren();
         plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
     }
 
