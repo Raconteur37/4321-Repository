@@ -1,13 +1,8 @@
 using Normal.Realtime;
 using UnityEngine;
 
-using System;
-using UnityEngine.UIElements;
-
 public class Stopwatch : RealtimeComponent<StopwatchModel>
 {
-    public Transform cube;
-  
     public float time
     {
         get
@@ -23,23 +18,8 @@ public class Stopwatch : RealtimeComponent<StopwatchModel>
         }
     }
 
-    private void Update()
-    {
-        double time = Math.Round(realtime.room.time);
-        if ( time % 2 == 0)
-        {
-            Debug.Log(time);
-            Vector3 scale = cube.transform.localScale;
-            scale += new Vector3(0.0001f, 0.0001f, 0.0001f);
-            cube.transform.localScale = scale;
-        }
-    }
-
-
     public void StartStopwatch()
     {
         model.startTime = realtime.room.time;
     }
-
-
 }
