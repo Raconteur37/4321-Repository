@@ -295,7 +295,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3545836438698229850}
+        m_TargetAssemblyTypeName: SpawnPrefabPot, Assembly-CSharp
+        m_MethodName: SpawnCactusSeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
@@ -604,7 +616,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3545836438698229850}
+        m_TargetAssemblyTypeName: SpawnPrefabPot, Assembly-CSharp
+        m_MethodName: SpawnOrchidSeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
@@ -5081,7 +5105,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2609615662253906720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5129,11 +5153,15 @@ MonoBehaviour:
     type: 3}
   prefab_Soil: {fileID: 1937218039121557462, guid: dd5177e53242249ffa89e8c2bf7436e8,
     type: 3}
-  prefab_Seed: {fileID: 6476229857162120817, guid: a0d75e7acfa25f642b10a3a8fd06084f,
+  prefab_Seed: {fileID: 1570029533709453653, guid: 94f7c5de98b52432aa55f0bc0ff45d51,
     type: 3}
   prefab_Watering_Can: {fileID: 5276908727019091455, guid: 05304ac022b224baab3ed9eecf40ab89,
     type: 3}
   prefab_Shovel: {fileID: 3186883228568221641, guid: ecc80937b97824bde89f2831c7457927,
+    type: 3}
+  prefab_OrchidSeed: {fileID: 1570029533709453653, guid: d7e9420c03acc47f09c258cce3ad4a5a,
+    type: 3}
+  prefab_CactusSeed: {fileID: 1570029533709453653, guid: 0ab4aa96b5a834a91806bb7c026b0781,
     type: 3}
   WristMenuTransform: {fileID: 270744803889668389}
   offsetFromWristMenu: {x: 0, y: 0.1, z: 0}

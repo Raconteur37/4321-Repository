@@ -7,6 +7,8 @@ public class SpawnPrefabPot : MonoBehaviour
     public GameObject prefab_Seed; // Assign this in the inspector
     public GameObject prefab_Watering_Can; // Assign this in the inspector
     public GameObject prefab_Shovel; // Assign this in the inspector
+    public GameObject prefab_OrchidSeed;
+    public GameObject prefab_CactusSeed;
 
     [SerializeField] private Transform WristMenuTransform;
     [SerializeField] private Vector3 offsetFromWristMenu = new Vector3(0f, 0.1f, 0f);
@@ -81,5 +83,32 @@ public class SpawnPrefabPot : MonoBehaviour
             Debug.LogError("Prefab to spawn or wrist menu transform is not assigned.");
         }
     }
-    
+    public void SpawnOrchidSeed()
+    {
+        if (prefab_OrchidSeed != null && WristMenuTransform != null)
+        {
+            // Calculate the spawn position relative to the wrist menu with the offset
+            Vector3 spawnPosition = WristMenuTransform.TransformPoint(offsetFromWristMenu);
+            Instantiate(prefab_OrchidSeed, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("Prefab to spawn or wrist menu transform is not assigned.");
+        }
+    }
+    public void SpawnCactusSeed()
+    {
+        if (prefab_CactusSeed != null && WristMenuTransform != null)
+        {
+            // Calculate the spawn position relative to the wrist menu with the offset
+            Vector3 spawnPosition = WristMenuTransform.TransformPoint(offsetFromWristMenu);
+            Instantiate(prefab_CactusSeed, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("Prefab to spawn or wrist menu transform is not assigned.");
+        }
+    }
+
+
 }
