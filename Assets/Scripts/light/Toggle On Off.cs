@@ -3,28 +3,30 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public Light spotLight; 
+    public Light spotLight;
+    public BoxCollider LightBox;
 
     private bool isLightOn = false; 
 
     void Start()
     {
         
-        GetComponent<BoxCollider>().enabled = false;
+        LightBox.enabled = false;
         
         spotLight.enabled = false;
     }
 
+    public void LightSwitch()
+    {
+        isLightOn = !isLightOn;
+
+        spotLight.enabled = isLightOn;
+
+        LightBox.enabled = isLightOn;
+
+    }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            isLightOn = !isLightOn;
 
-            spotLight.enabled = isLightOn;
-            
-            GetComponent<BoxCollider>().enabled = true;
-            
-        }
     }
 }

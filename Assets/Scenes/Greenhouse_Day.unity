@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0078735305, g: 0.029314285, b: 0.15393376, a: 1}
+  m_IndirectSpecularColor: {r: 0.007858357, g: 0.029217625, b: 0.15373902, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1931,7 +1931,7 @@ PrefabInstance:
     - target: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
         type: 3}
@@ -1961,6 +1961,22 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 511837944}
+    - targetCorrespondingSourceObject: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511837947}
+    - targetCorrespondingSourceObject: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511837946}
+    - targetCorrespondingSourceObject: {fileID: 1845042845946380348, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511837945}
+    - targetCorrespondingSourceObject: {fileID: 7278208785654519300, guid: 61e527d154bad4e188660fdf903d3b09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511837942}
   m_SourcePrefab: {fileID: 100100000, guid: 61e527d154bad4e188660fdf903d3b09, type: 3}
 --- !u!1 &511837938 stripped
 GameObject:
@@ -1981,12 +1997,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLight: {fileID: 511837940}
+  LightBox: {fileID: 511837942}
 --- !u!108 &511837940 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 7746342899691501401, guid: 61e527d154bad4e188660fdf903d3b09,
     type: 3}
   m_PrefabInstance: {fileID: 511837937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &511837941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7278208785654519300, guid: 61e527d154bad4e188660fdf903d3b09,
+    type: 3}
+  m_PrefabInstance: {fileID: 511837937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &511837942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511837941}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 110.44028, y: 78.03052, z: 133.6753}
+  m_Center: {x: 0, y: -200, z: 9.685758}
 --- !u!65 &511837944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2006,8 +2050,91 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 110.44028, y: 78.03052, z: 133.6753}
-  m_Center: {x: -19.930658, y: 96.88386, z: 9.685758}
+  m_Size: {x: 34.200607, y: 29.3689, z: 40.29082}
+  m_Center: {x: -21.374638, y: 174.3306, z: -2.2154152}
+--- !u!114 &511837945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511837938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 511837946}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 511837939}
+        m_TargetAssemblyTypeName: LightController, Assembly-CSharp
+        m_MethodName: LightSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &511837946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511837938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _surface: {fileID: 511837947}
+  _selectSurface: {fileID: 0}
+  _movementProvider: {fileID: 0}
+  _tiebreakerScore: 0
+--- !u!114 &511837947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511837938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2140d2b457bea84881488302059889b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 511837944}
 --- !u!1 &522761159
 GameObject:
   m_ObjectHideFlags: 0
