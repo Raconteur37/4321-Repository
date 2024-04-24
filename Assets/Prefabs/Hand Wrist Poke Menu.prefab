@@ -1016,7 +1016,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3545836438698229850}
+        m_TargetAssemblyTypeName: SpawnPrefabPot, Assembly-CSharp
+        m_MethodName: SpawnSoil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
@@ -2670,7 +2682,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3545836438698229850}
         m_TargetAssemblyTypeName: SpawnPrefabPot, Assembly-CSharp
-        m_MethodName: SpawnSoil
+        m_MethodName: SpawnSandy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3784,7 +3796,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3545836438698229850}
+        m_TargetAssemblyTypeName: SpawnPrefabPot, Assembly-CSharp
+        m_MethodName: SpawnClay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
@@ -5039,7 +5063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &270744803889668389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5162,6 +5186,10 @@ MonoBehaviour:
   prefab_OrchidSeed: {fileID: 1570029533709453653, guid: d7e9420c03acc47f09c258cce3ad4a5a,
     type: 3}
   prefab_CactusSeed: {fileID: 1570029533709453653, guid: 0ab4aa96b5a834a91806bb7c026b0781,
+    type: 3}
+  prefab_Sandy: {fileID: 978345771101578197, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+    type: 3}
+  prefab_Clay: {fileID: 1937218039121557462, guid: 4284f2bc6afd04dd7a5671a86593f51e,
     type: 3}
   WristMenuTransform: {fileID: 270744803889668389}
   offsetFromWristMenu: {x: 0, y: 0.1, z: 0}
