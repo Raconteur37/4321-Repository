@@ -369,13 +369,13 @@ public class PotManager : MonoBehaviour
         if (plant != null)
         {
 
-            updatePlantGO();
             if(plant.getPlantName() == "Cactus")
             {
                 this.plant = new Cactus();
                 MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
                 Mesh cactusMesh = Resources.Load<Mesh>("cactus");
                 plantFilter.mesh = cactusMesh;
+                updatePlantGO();
             }
             if (plant.getPlantName() == "Orchid")
             {
@@ -383,13 +383,16 @@ public class PotManager : MonoBehaviour
                 MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
                 Mesh orchidMesh = Resources.Load<Mesh>("orchid");
                 plantFilter.mesh = orchidMesh;
+                updatePlantGO();
+
             }
-            if(plant.getPlantName() == "Aloe Vera")
+            if (plant.getPlantName() == "Aloe Vera")
             {
                 this.plant = new AloeVera();
                 MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
                 Mesh aloeMesh = Resources.Load<Mesh>("aloe");
                 plantFilter.mesh = aloeMesh;
+                updatePlantGO();
             }
 
             AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
