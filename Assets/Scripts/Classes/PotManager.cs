@@ -26,9 +26,10 @@ public class PotManager : MonoBehaviour
     private PlantClass plant;
     
     [SerializeField] float updateTime; //timeframe variable
-    
+
+
     private Vector3 offset = new Vector3(-.3f, .5f, 0f); // Adjust the offset as needed
-    private Vector3 offset1 = new Vector3(1f, .5f, 0f);
+    private Vector3 offset1 = new Vector3(-1f, .5f, 0f);
     private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
