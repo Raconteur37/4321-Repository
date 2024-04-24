@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 3606098528399625632}
   - component: {fileID: 6749761374679890279}
   m_Layer: 0
-  m_Name: Soil_Old
+  m_Name: Clay Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
