@@ -365,17 +365,31 @@ public class PotManager : MonoBehaviour
 
     public void setPlant(PlantClass plant)
     {
-        this.plant = plant;
         Debug.Log("it's set");
         if (plant != null)
         {
 
             updatePlantGO();
-            if(plant.getPlantName() == "Basil")
+            if(plant.getPlantName() == "Cactus")
             {
+                this.plant = new Cactus();
                 MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
-                Mesh basilMesh = Resources.Load<Mesh>("basil");
-                plantFilter.mesh = basilMesh;
+                Mesh cactusMesh = Resources.Load<Mesh>("cactus");
+                plantFilter.mesh = cactusMesh;
+            }
+            if (plant.getPlantName() == "Orchid")
+            {
+                this.plant = new Orchid();
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh orchidMesh = Resources.Load<Mesh>("orchid");
+                plantFilter.mesh = orchidMesh;
+            }
+            if(plant.getPlantName() == "Aloe Vera")
+            {
+                this.plant = new AloeVera();
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh aloeMesh = Resources.Load<Mesh>("aloe");
+                plantFilter.mesh = aloeMesh;
             }
 
             AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
