@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor;
+using Normal.Realtime;
+
 
 public class PotManager : MonoBehaviour
 {
@@ -35,7 +37,9 @@ public class PotManager : MonoBehaviour
     private float xPlantScale = 0.0f;
     private float yPlantScale = 0.0f;
     private float zPlantScale = 0.0f;
-    
+
+    public RealtimeView rtView;
+
     public void getSunStatus(string status)
     {
         if (status == "Clear")
@@ -58,17 +62,17 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        plant = new AloeVera(); // For now
-        soil = new Soil("Sandy"); // Temp
+        //plant = new AloeVera(); // For now // This too
+        //soil = new Soil("Sandy"); // Temp, comment out when ready
         
         if (soilGO != null)
         {
-            soilGO.SetActive(true);
+            soilGO.SetActive(false); // Change to false when ready
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(true);
+            plantGO.SetActive(false); // False when ready
         }
         
 
@@ -175,6 +179,19 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+    
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Lamp"))
+        {
+            if (!plant.plantIsInSun())
+            {
+                plant.isPlantInSun(true);
+            }
+        }
+    }
+    
     public void ViewAlertText()
     {
         AlertTextBackground.gameObject.SetActive(!AlertTextBackground.gameObject.activeSelf);
@@ -288,7 +305,8 @@ public class PotManager : MonoBehaviour
         xPlantScale = (float)status;
         yPlantScale = (float)status;
         zPlantScale = (float)status;
-                
+
+        rtView.RequestOwnershipOfSelfAndChildren();
         plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
     }
 

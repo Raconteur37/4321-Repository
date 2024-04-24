@@ -10,6 +10,8 @@ public class Cactus : PlantClass
     {
             
         setPlantName("Cactus");
+        setDescription("The Cactus is a very popular plant and is in usually high demand.\n The cactus needs the most sun of any plant and the least amount of water. \n" +
+                       "The preferred soil type is Loam and it loves hot temperatures!");
             
         setWaterDrainMultiplier(.1); // Doesnt need that much water so it'll drain slower
             
@@ -21,7 +23,7 @@ public class Cactus : PlantClass
         setSunDecayThresh(getSunMinRange() * .3);
         setWaterDecayThresh(getWaterMinRange() * .2);
             
-        setSunMaxRange(100);
+        setSunMaxRange(200);
         setWaterMaxRange(50);
             
         setSunlightAmount(65); // Default: 50

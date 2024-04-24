@@ -671,6 +671,7 @@ MonoBehaviour:
   AlertText: {fileID: 234883471472031322}
   soil: {fileID: 0}
   updateTime: 20
+  rtView: {fileID: 0}
 --- !u!65 &253372618521253960
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -9,10 +9,12 @@ public class Orchid : PlantClass
     {
             
         setPlantName("Orchid");
+        setDescription("The Orchid is a very unique plant and is loved by many.\n The orchid needs a lot of sun and will consume it more than a lot of other plants. \n" +
+                       "It needs a decent amount of water, and overall is a high maintenance plant.\n The preferred soil type is Clay!");
             
         setWaterDrainMultiplier(.6); // Needs decent amount of water
             
-        setSunDrainMultiplier(.6); // Needs a lot of sun
+        setSunDrainMultiplier(.7); // Needs a lot of sun
             
         setSunMinRange(50); 
         setWaterMinRange(50);
