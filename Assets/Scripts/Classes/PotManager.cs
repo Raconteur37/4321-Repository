@@ -356,12 +356,13 @@ public class PotManager : MonoBehaviour
     public void setSoil(Soil soil)
     {
         this.soil = soil;
-        updateSoilGO();
         if (soil.getType() == "Sandy")
         {
             Renderer currentM = soilGO.GetComponent<Renderer>();
-            Material sandMaterial = Resources.Load<Material>("Sand Material");
+            Material sandMaterial = Resources.Load<Material>("Sand");
         }
+        updateSoilGO();
+
     }
 
     public void setPlant(PlantClass plant)
