@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using TMPro;
+using System;
 public class GetCurrentWeatherInfo : MonoBehaviour
 {
     const string URL_GetPublicIP = "https://api.ipify.org/";
@@ -99,8 +100,8 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     public class OpenWeather_Rain
     {
-        [JsonProperty("1h")] public int VolumeInLastHour { get; set; }
-        [JsonProperty("3h")] public int VolumeInLast3Hours { get; set; }
+        [JsonProperty("1h")] public float VolumeInLastHour { get; set; }
+        [JsonProperty("3h")] public float VolumeInLast3Hours { get; set; }
     }
 
     public class OpenWeather_Snow
@@ -148,6 +149,7 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
     public Text text;
 
+
     public void changeRainButton()
     {
         foreach(var conditions in weatherData.WeatherConditions)
@@ -162,15 +164,18 @@ public class GetCurrentWeatherInfo : MonoBehaviour
                 conditions.Group = "Rain";
                 Debug.Log("turning rain on");
             }
-            FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            //FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            //FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
         }
+        UpdateWeatherUI();
     }
+
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(GetWeather_Stage1_PublicIP());
-       
+
     }
 
     // Update is called once per frame
@@ -179,88 +184,126 @@ public class GetCurrentWeatherInfo : MonoBehaviour
 
         if (phase == Ephase.Succeeded && !shownWeatherInfo)
         {
+            shownWeatherInfo = true;
+
+            UpdateWeatherUI();
+            Debug.Log("updating the weather ui for the first time");
+
+            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
+        }
+
+        if (phase == Ephase.Succeeded)
+        {
             
             shownWeatherInfo = true;
 
-            text.text = $"Temperature: {weatherData.KeyInfo.Temperature} F\n City Name: {weatherData.CityName}";
-
-            Debug.Log($"Weather Data {weatherData.CityName}");
+            /*Debug.Log($"Weather Data {weatherData.CityName}");
             Debug.Log($"Temperature: {weatherData.KeyInfo.Temperature}");
             Debug.Log($"Humidity: {weatherData.KeyInfo.Humidity}");
-            Debug.Log("Before");
-            if (!weatherUI.gameObject.activeSelf)
-            {
-                weatherUI.gameObject.SetActive(true);
-            }
-            TextMeshProUGUI[] texts = weatherUI.GetComponentsInChildren<TextMeshProUGUI>();
-            Image[] images = weatherUI.GetComponentsInChildren<Image>();
-            Debug.Log("After");
-            Debug.Log($"Text Length {texts.Length}");
-            foreach (TextMeshProUGUI TMP in texts)
-            {
-                Debug.Log(TMP.name);
-                if (TMP.name == "CurrentLocation")
-                {
-                    Debug.Log("Found CurrentLocation");
-                    TMP.text = weatherData.CityName;
-                }
-                else if (TMP.name == "CurrentTemp")
-                {
-                    TMP.text = weatherData.KeyInfo.Temperature.ToString();
-                }
-                else if (TMP.name == "CurrentHumidity")
-                {
-                    TMP.text = weatherData.KeyInfo.Humidity.ToString() + "%";
+            Debug.Log("Before");*/
 
-                }
-                else if (TMP.name == "WeatherLabel")
+
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Debug.Log("Y button on keyboard was pressed");
+            StartCoroutine(GetWeather_Stage1_PublicIP());
+            UpdateWeatherUI();
+            Debug.Log("updating weather api");
+        }
+        if (OVRInput.Get(OVRInput.Button.Four))
+        {
+            Debug.Log("Y button pressed");
+            StartCoroutine(GetWeather_Stage1_PublicIP());
+            UpdateWeatherUI();
+            Debug.Log("Y button pressed to updated weather api");
+        }
+    }
+    public void UpdateWeatherUI()
+    {
+        if (!weatherUI.gameObject.activeSelf)
+        {
+            weatherUI.gameObject.SetActive(true);
+        }
+        TextMeshProUGUI[] texts = weatherUI.GetComponentsInChildren<TextMeshProUGUI>();
+        Image[] images = weatherUI.GetComponentsInChildren<Image>();
+        //Debug.Log("After");
+        //Debug.Log($"Text Length {texts.Length}");
+        foreach (TextMeshProUGUI TMP in texts)
+        {
+            Debug.Log(TMP.name);
+            if (TMP.name == "CurrentLocation")
+            {
+                Debug.Log("Found CurrentLocation");
+                TMP.text = weatherData.CityName;
+            }
+            else if (TMP.name == "CurrentTemp")
+            {
+                TMP.text = weatherData.KeyInfo.Temperature.ToString();
+            }
+            else if (TMP.name == "CurrentHumidity")
+            {
+                TMP.text = weatherData.KeyInfo.Humidity.ToString() + "%";
+
+            }
+            else if (TMP.name == "WeatherLabel")
+            {
+                foreach (var conditions in weatherData.WeatherConditions)
                 {
-                    foreach (var conditions in weatherData.WeatherConditions)
+                    if (conditions.Group == "Clouds")
                     {
-                        if (conditions.Group == "Cloud")
+                        TMP.text = "Cloudy";
+                        foreach (Image temp in images)
                         {
-                            TMP.text = "Cloudy";
-                            foreach (Image temp in images)
+                            if (temp.name == "WeatherIcon")
                             {
-                                if (temp.name == "WeatherIcon")
-                                {
-                                    temp.sprite = cloudy;
-                                }
+                                temp.sprite = cloudy;
                             }
                         }
-                        else if(conditions.Group == "Rain")
+                    }
+                    else if (conditions.Group == "Rain")
+                    {
+                        TMP.text = "Rainy";
+                        foreach (Image temp in images)
                         {
-                            TMP.text = "Rainy";
-                            foreach (Image temp in images)
+                            if (temp.name == "WeatherIcon")
                             {
-                                if (temp.name == "WeatherIcon")
-                                {
-                                    temp.sprite = rainy;
-                                }
+                                temp.sprite = rainy;
                             }
                         }
-                        else if(conditions.Group == "Clear")
+                    }
+                    else if (conditions.Group == "Clear")
+                    {
+                        TMP.text = "Sunny";
+                        foreach (Image temp in images)
                         {
-                            TMP.text = "Sunny";
-                            foreach (Image temp in images)
+                            if (temp.name == "WeatherIcon")
                             {
-                                if (temp.name == "WeatherIcon")
-                                {
-                                    temp.sprite = sunny;
-                                }
+                                temp.sprite = sunny;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        TMP.text = "Cloudy";
+                        foreach (Image temp in images)
+                        {
+                            if (temp.name == "WeatherIcon")
+                            {
+                                temp.sprite = cloudy;
                             }
                         }
                     }
                 }
             }
-            foreach (var conditions in weatherData.WeatherConditions)
-            {
-                Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
-                FindObjectOfType<Rain>().rainStatus(conditions.Group);
-                FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
-            }
-
         }
+        foreach (var conditions in weatherData.WeatherConditions)
+        {
+            Debug.Log($"conditions: {conditions.Group}: {conditions.Description}");
+            FindObjectOfType<Rain>().rainStatus(conditions.Group);
+            FindObjectOfType<PotManager>().getSunStatus(conditions.Group);
+        }
+        FindAnyObjectByType<TimeManager>().updateTime();
     }
 
     IEnumerator GetWeather_Stage1_PublicIP()

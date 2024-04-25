@@ -14,10 +14,14 @@ public class Rain : MonoBehaviour
 
     public void rainStatus(string status)
     {
-        if (status == "Rain")
+        if (status == "Rain" || status == "Thunderstorm")
         {
             rain.SetActive(true);
             Debug.Log("setting rain to active");
+            if (status == "Thunderstorm")
+            {
+                Debug.Log("Thunderstorm in progress");
+            }
         }
         else
         {

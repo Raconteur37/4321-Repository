@@ -4,6 +4,10 @@ using Classes.Plants;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEditor;
+using Normal.Realtime;
+
 
 public class PotManager : MonoBehaviour
 {
@@ -12,14 +16,20 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Canvas plantstatsUI;
 
     [SerializeField] private Canvas plantstatsUI1;
-    
+    [SerializeField] private Image AlertIcon;
+    [SerializeField] private Sprite Check;
+    [SerializeField] private Sprite NotCheck;
+    [SerializeField] private Image AlertTextBackground;
+    [SerializeField] private TextMeshProUGUI AlertText;
+
     [SerializeField] private Soil soil;
     private PlantClass plant;
     
     [SerializeField] float updateTime; //timeframe variable
-    
+
+
     private Vector3 offset = new Vector3(-.3f, .5f, 0f); // Adjust the offset as needed
-    private Vector3 offset1 = new Vector3(1f, .5f, 0f);
+    private Vector3 offset1 = new Vector3(-1f, .5f, 0f);
     private float tempUpdateCounter = 0f; //timeframe temp variable
 
     private GameObject soilGO = null;
@@ -28,7 +38,9 @@ public class PotManager : MonoBehaviour
     private float xPlantScale = 0.0f;
     private float yPlantScale = 0.0f;
     private float zPlantScale = 0.0f;
-    
+
+    public RealtimeView rtView;
+
     public void getSunStatus(string status)
     {
         if (status == "Clear")
@@ -51,22 +63,22 @@ public class PotManager : MonoBehaviour
         soilGO = GameObject.Find("Soil_Physical");
         plantGO = GameObject.Find("Plant_Physical");
         
-        plant = new AloeVera(); // For now
-        soil = new Soil("Sandy"); // Temp
+        //plant = new AloeVera(); // For now // This too
+        //soil = new Soil("Sandy"); // Temp, comment out when ready
         
         if (soilGO != null)
         {
-            soilGO.SetActive(true);
+            soilGO.SetActive(false); // Change to false when ready
         }
         
         if (plantGO != null)
         {
-            plantGO.SetActive(true);
+            plantGO.SetActive(false); // False when ready
         }
         
 
     }
-    private void updatePlantStatsUI()
+    public void updatePlantStatsUI()
     {
         if (plant != null)
         {
@@ -95,6 +107,95 @@ public class PotManager : MonoBehaviour
                 }
             }
         }
+    }
+    private void UpdateAlertUI()
+    {
+        if (plant != null)
+        {
+            Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
+            bool water = false;
+            bool sun = true;
+            foreach (Slider slider in sliders)
+            {
+                if (slider.name == "WaterSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double waterAmount = plant.getWaterAmount();
+                        float waterAmountFloat = (float)waterAmount;
+                        float maxWaterRange = statsUI.getMax();
+                        float minWaterRange = statsUI.getMin();
+                        float currentWaterAmount = statsUI.getSliderValue();
+                        if (currentWaterAmount < minWaterRange || currentWaterAmount > maxWaterRange)
+                        {
+                            water = false;
+                        }
+                        else
+                        {
+                            water = true;
+                        }
+                    }
+                }
+                else if (slider.name == "SunlightSlider")
+                {
+                    PlantStatsUI statsUI = slider.GetComponent<PlantStatsUI>();
+                    if (statsUI != null)
+                    {
+                        double sunlightAmount = plant.getSunlightAmount();
+                        float sunlightAmountFloat = (float)sunlightAmount;
+                        float maxSunlightRange = statsUI.getMax();
+                        float minSunlightRange = statsUI.getMin();
+                        float currentSunlightAmount = statsUI.getSliderValue();
+                        if (currentSunlightAmount < minSunlightRange || currentSunlightAmount > maxSunlightRange)
+                        {
+                            sun = false;
+                        }
+                        else
+                        {
+                            sun = true;
+                        }
+                    }
+                }
+            }
+            if (sun && water)
+            {
+                AlertIcon.sprite = Check;
+                AlertText.text = "Your Plant is Healthy!";
+            }
+            else if(sun && !water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Water Levels!";
+            }
+            else if(!sun && water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Light Levels!";
+            }
+            else if(!sun && !water)
+            {
+                AlertIcon.sprite = NotCheck;
+                AlertText.text = "Check Your Plant's Water and Light Levels!";
+            }
+        }
+    }
+    
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Lamp"))
+        {
+            if (!plant.plantIsInSun())
+            {
+                plant.isPlantInSun(true);
+            }
+        }
+    }
+    
+    public void ViewAlertText()
+    {
+        AlertTextBackground.gameObject.SetActive(!AlertTextBackground.gameObject.activeSelf);
     }
 
     public PlantClass getPlant()
@@ -129,6 +230,7 @@ public class PotManager : MonoBehaviour
     public void setPlantGOFalse()
     {
         plantGO.SetActive(false);
+        AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
     }
 
     public void setSoilGOFalse()
@@ -139,31 +241,28 @@ public class PotManager : MonoBehaviour
     private void Update()
     {
         
+        if (OVRInput.Get(OVRInput.Button.Two)) // Shoot forward in time
+        {
+            //Debug.Log("B button pressed");
+            updatePlantAndScale();
+            resetTimer();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.B)) // Still forward by 1 update
+        {
+            //Debug.Log("B key pressed");
+            updatePlantAndScale();
+            resetTimer();
+        }
+        
         if (tempUpdateCounter <= 0f)  
         {
             if (plant != null && !plant.getIsFullyGrown())
             {
 
-                //Debug.Log("Called update in pot manager");
+                updatePlantAndScale();
 
-                plant.updatePlant();
-
-                updatePlantStatsUI();
-
-                //plant.toString();
-
-                double status = plant.getStatus();
-
-                //Debug.Log(status);
-
-                xPlantScale = (float)status;
-                yPlantScale = (float)status;
-                zPlantScale = (float)status;
-                
-                plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
-                
-
-                tempUpdateCounter = updateTime; //reset the timer or cd
+                resetTimer();
             }
         }
         
@@ -188,6 +287,35 @@ public class PotManager : MonoBehaviour
             }
         }
     }
+
+    public void updatePlantAndScale()
+    {
+        //Debug.Log("Called update in pot manager");
+
+        plant.updatePlant();
+
+        updatePlantStatsUI();
+        UpdateAlertUI();
+
+        //plant.toString();
+
+        double status = plant.getStatus();
+
+        //Debug.Log(status);
+
+        xPlantScale = (float)status;
+        yPlantScale = (float)status;
+        zPlantScale = (float)status;
+
+        rtView.RequestOwnershipOfSelfAndChildren();
+        plantGO.transform.localScale = new Vector3(getPlantXScale(), getPlantYScale(), getPlantZScale());
+    }
+
+    public void resetTimer()
+    {
+        tempUpdateCounter = updateTime; //reset the timer or cd
+    }
+    
     public void VRUISelect()
     {
         Debug.Log("Selector");
@@ -228,16 +356,50 @@ public class PotManager : MonoBehaviour
     public void setSoil(Soil soil)
     {
         this.soil = soil;
+        if (soil.getType() == "Sandy")
+        {
+            Renderer currentM = soilGO.GetComponent<Renderer>();
+            Material sandMaterial = Resources.Load<Material>("Sand");
+            currentM.material = sandMaterial;
+
+        }
         updateSoilGO();
+
     }
 
     public void setPlant(PlantClass plant)
     {
-        this.plant = plant;
         Debug.Log("it's set");
         if (plant != null)
         {
-            updatePlantGO();
+
+            if(plant.getPlantName() == "Cactus")
+            {
+                this.plant = new Cactus();
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh cactusMesh = Resources.Load<Mesh>("cactus");
+                plantFilter.mesh = cactusMesh;
+                updatePlantGO();
+            }
+            if (plant.getPlantName() == "Orchid")
+            {
+                this.plant = new Orchid();
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh orchidMesh = Resources.Load<Mesh>("orchid");
+                plantFilter.mesh = orchidMesh;
+                updatePlantGO();
+
+            }
+            if (plant.getPlantName() == "Aloe Vera")
+            {
+                this.plant = new AloeVera();
+                MeshFilter plantFilter = plantGO.GetComponent<MeshFilter>();
+                Mesh aloeMesh = Resources.Load<Mesh>("aloe");
+                plantFilter.mesh = aloeMesh;
+                updatePlantGO();
+            }
+
+            AlertIcon.gameObject.SetActive(!AlertIcon.gameObject.activeSelf);
             Slider[] sliders = plantstatsUI1.GetComponentsInChildren<Slider>();
             foreach (Slider slider in sliders)
             {
@@ -279,6 +441,7 @@ public class PotManager : MonoBehaviour
                     }
                 }
             }
+            UpdateAlertUI();
         }
     }
 

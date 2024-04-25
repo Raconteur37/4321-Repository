@@ -26,6 +26,18 @@ public class PlantStatsUI : MonoBehaviour
     {
         maxRange = max;
     }
+    public float getMin()
+    {
+        return minRange;
+    }
+    public float getMax()
+    {
+        return maxRange;
+    }
+    public float getSliderValue()
+    {
+        return slider.value;
+    }
 
 
     // Method to set the progress of the slider

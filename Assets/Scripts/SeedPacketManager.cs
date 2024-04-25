@@ -19,20 +19,36 @@ public class SeedPacketManager : MonoBehaviour
 
             if (potManager.getSoil() != null)
             {
-                
-                switch (seedPacket.getDisplayName())
+                if (seedPacket.getDisplayName() == "Aloe Vera")
                 {
+                    AloeVera aloe = new AloeVera();
+                    potManager.setPlant(aloe);
+                    if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
+                    {
+                        potManager.getPlant().setIsInPerferedSoil(true);
+                    }
 
-                    case ("Aloe Vera"):
-                        AloeVera aloe = new AloeVera();
-                        potManager.setPlant(aloe);
-                        //Debug.Log("setting aloe");
-                        if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
-                        {
-                            potManager.getPlant().setIsInPerferedSoil(true);
-                        }
-                        break;
                 }
+                if (seedPacket.getDisplayName() == "Orchid")
+                {
+                    Orchid orchid = new Orchid();
+                    potManager.setPlant(orchid);
+                    if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
+                    {
+                        potManager.getPlant().setIsInPerferedSoil(true);
+                    }
+
+                }
+                if(seedPacket.getDisplayName() == "Cactus")
+                {
+                    Cactus cactus = new Cactus();
+                    potManager.setPlant(cactus);
+                    if (potManager.getPlant().getPerferedSoil() == potManager.getSoil().getType())
+                    {
+                        potManager.getPlant().setIsInPerferedSoil(true);
+                    }
+                }
+
                 gameObject.SetActive(false);
                 
                 
