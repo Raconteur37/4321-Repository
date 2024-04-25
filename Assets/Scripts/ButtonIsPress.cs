@@ -21,7 +21,7 @@ public class ButtonIsPress : MonoBehaviour
         isPressed = false;
     }
 
-    private void nTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isPressed)
         {
