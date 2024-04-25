@@ -360,6 +360,8 @@ public class PotManager : MonoBehaviour
         {
             Renderer currentM = soilGO.GetComponent<Renderer>();
             Material sandMaterial = Resources.Load<Material>("Sand");
+            currentM.material = sandMaterial;
+
         }
         updateSoilGO();
 

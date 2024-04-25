@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.007858357, g: 0.029217625, b: 0.15373902, a: 1}
+  m_IndirectSpecularColor: {r: 0.007950388, g: 0.029539216, b: 0.15388398, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3166,6 +3166,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: 2
   _axis2D: 9
+--- !u!1001 &806107997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 678512301428114007, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: _realtime
+      value: 
+      objectReference: {fileID: 1532019414}
+    - target: {fileID: 678512301428114007, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: _viewUUID
+      value: 2562708e-013e-4d8a-acb2-a0781ff4ef63
+      objectReference: {fileID: 0}
+    - target: {fileID: 978345771101578197, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_Name
+      value: Sandy Soil
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.355
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411137813136272, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832467175727840126, guid: bb019fe451f944f47aa2ad2b8aa90e89,
+        type: 3}
+      propertyPath: instanceId
+      value: 6bca9bcb-e748-42d6-bfc1-e6619cd9430f
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb019fe451f944f47aa2ad2b8aa90e89, type: 3}
 --- !u!1 &807041877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,7 +5832,7 @@ PrefabInstance:
     - target: {fileID: 2207791192490486584, guid: 0ab4aa96b5a834a91806bb7c026b0781,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.826
+      value: 1.078
       objectReference: {fileID: 0}
     - target: {fileID: 2207791192490486584, guid: 0ab4aa96b5a834a91806bb7c026b0781,
         type: 3}
@@ -9402,6 +9485,7 @@ SceneRoots:
   - {fileID: 635107889}
   - {fileID: 1991787347}
   - {fileID: 814429116}
+  - {fileID: 806107997}
   - {fileID: 5500640003750728956}
   - {fileID: 1308585877}
   - {fileID: 1440815648}
